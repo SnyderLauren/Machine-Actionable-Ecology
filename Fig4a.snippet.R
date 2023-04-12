@@ -40,7 +40,6 @@ library(MuMIn)#MuMIn_1.43.17
 library (ggplot2)#ggplot2_3.3.6  
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0  
-library(orkg)
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -83,8 +82,8 @@ head(newdat.lme)
 newdat.lme$predlme = predict(fitlme, newdata = newdat.lme, level = 0)
 #And then use these in geom_line() to add fitted lines based on the new predlm variable. (figure code just provided for reference)
 #ggplot(AphidsIncidence, aes(x = mead_250, y = Aphid_incidence, color = Year) ) +
- # geom_rug(sides = "b", size = 1) +
-  #geom_line(data = newdat.lme, aes(y = predlme), size = 1)
+# geom_rug(sides = "b", size = 1) +
+#geom_line(data = newdat.lme, aes(y = predlme), size = 1)
 
 #create confidence intervals for lme objects
 des = model.matrix(formula(fitlme)[-2], newdat.lme)
@@ -98,16 +97,15 @@ newdat.lme$upper = with(newdat.lme, predlme + 2*sqrt(predvar) )
 
 #Here's the code to generate the figure, with a confidence envelope for each line. (Again, figure just provided for reference, but not integral to code to generate data for extraction)
 p1 <- ggplot(AphidsIncidence, aes(x = mead_250, y = Aphid_incidence, color = Year) ) +
- geom_point()+
-geom_rug(sides = "b", size = 1) +
-geom_ribbon(data = newdat.lme, aes(y = NULL, ymin = lower, ymax = upper,
-           color = NULL, fill = Year),
-alpha = .15) +
-geom_line(data = newdat.lme, aes(y = predlme), size = .75)+
-theme_classic()+xlab('Proportion of meadows at 250-m')+ylab('Proportion of plants infested by aphids')
+  geom_point()+
+  geom_rug(sides = "b", size = 1) +
+  geom_ribbon(data = newdat.lme, aes(y = NULL, ymin = lower, ymax = upper,
+                                     color = NULL, fill = Year),
+              alpha = .15) +
+  geom_line(data = newdat.lme, aes(y = predlme), size = .75)+
+  theme_classic()+xlab('Proportion of meadows at 250-m')+ylab('Proportion of plants infested by aphids')
 
-# Save ggplot figure as png
-ggsave("Fig.4a.png", plot = p1, scale=0.5)
+p1
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4a based on the model predictions.
 PredictedValuesAphid_incidence <- newdat.lme
@@ -121,47 +119,3 @@ PredictedValuesAphid_incidence
 
 ###End of script
 
-############################
-########### ORKG ###########
-orkg <- ORKG(host="https://incubating.orkg.org/")
-
-# Template 'Model Fitting 4'
-orkg$templates$materialize_template(template_id = "R479769")
-tp = orkg$templates$list_templates()
-
-instance <- tp$model_fitting_4(
-  label="Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)", 
-  
-  # Git Repo is currently set to private
-  #has_input_dataset="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Landscape%20affects%20pest%20and%20crop%20yield_2023.csv?",
-  
-  # LandscapeData (8KB) can be used instead of URI
-  has_input_dataset=tuple(LandscapeData, "Title for dataset" ),
-  
-  # Description of the statistical model used
-  has_input_model=tp$statistical_model(
-    label="Mixed-effect model ",
-    is_denoted_by=tp$formula(
-      label="The formula for the mixed-effect model",
-      
-      has_value_specification=tp$value_specification(
-        label="formula",
-        has_specified_value="formula"
-      )
-    )
-  ),
-  
-  # Output dataset if applicable
-  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Dataset title'),
-  
-  # PNG output from ggplot - Git Repo is currently set to private
-  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
-  
-  # Output statement if applicable
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)",
-  
-  # R snippets currently disabled
-  #has_implementation="https://raw.githubusercontent.com/markusstocker/gentsch22cover/main/Fig4a.snippet.R"
-  
-)
-instance$serialize_to_file("article.contribution.1.json", format="json-ld")
