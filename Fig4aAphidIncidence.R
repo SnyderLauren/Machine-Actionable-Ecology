@@ -69,8 +69,8 @@ anova (fitlme,type='marginal')
 
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-summary(fitlme)
-
+sum1 <- summary(fitlme)
+sum1$tTable
 
 #Next, create a new dataset from which we will make predictions
 newdat.lme = data.frame(Year = AphidsIncidence$Year,
@@ -121,11 +121,14 @@ PredictedValuesAphid_incidence
 
 ###End of script
 
-############################
-########### ORKG ###########
+
+####################################### 
+############### ORKG ##################
+####################################### 
+
 orkg <- ORKG(host="https://incubating.orkg.org/")
 
-# Template 'Model Fitting 4'
+# Template 'Model Fitting 4' allows for has_input_dataset as Table as opposed to URI
 orkg$templates$materialize_template(template_id = "R479769")
 tp = orkg$templates$list_templates()
 
@@ -135,8 +138,8 @@ instance <- tp$model_fitting_4(
   # Git Repo is currently set to private
   #has_input_dataset="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Landscape%20affects%20pest%20and%20crop%20yield_2023.csv?",
   
-  # LandscapeData (8KB) can be used instead of URI
-  has_input_dataset=tuple(LandscapeData, "Title for dataset" ),
+  # LandscapeData can be used instead of URI
+  has_input_dataset=tuple(LandscapeData, "Suitable title for dataset" ),
   
   # Description of the statistical model used
   has_input_model=tp$statistical_model(
@@ -151,17 +154,25 @@ instance <- tp$model_fitting_4(
     )
   ),
   
-  # Output dataset if applicable
-  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Dataset title'),
+
+  #Predicted model values to recreate figure 4a (based on model predictions, not the raw data)
+  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Dataset title 1'),
+
+  #Output from ANOVA (Type III sum of squares) 
+  has_output_dataset_2= tuple(anova (fitlme,type='marginal'), 'Dataset title 2'),
   
-  # PNG output from ggplot - Git Repo is currently set to private
+  # Output of summary function on lme (fixed effects)
+  has_output_dataset_3= tuple(sum1$tTable, 'Dataset title 3'),
+  
+  # PNG output from ggplot - Git Repo is currently set to private.
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
   
-  # Output statement if applicable
+  # Output statement if applicable.
   has_output_statement= "Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)",
   
-  # R snippets currently disabled
-  #has_implementation="https://raw.githubusercontent.com/markusstocker/gentsch22cover/main/Fig4a.snippet.R"
+  # Snippet is essentially a concise version of this script with redundant code removed.
+  # Git Repo is currently set to private.
+  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main//Fig4a.snippet.R"
   
 )
 instance$serialize_to_file("article.contribution.1.json", format="json-ld")
