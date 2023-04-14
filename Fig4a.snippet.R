@@ -9,7 +9,7 @@
 
 ########### LOAD DATA  ##############
 #read in following CSV file:'Landscape.affects.pest.and.crop.yield_2023.cvs'
-Landscape.affects.pest.and.crop.yield_2023<-read.csv("Landscape affects pest and crop yield_2023.csv", na.strings=c("NA", ""))
+Landscape.affects.pest.and.crop.yield_2023<-read.csv("https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Landscape%20affects%20pest%20and%20crop%20yield_2023.csv", na.strings=c("NA", ""))
 
 #shorten dataset name
 LandscapeData <- Landscape.affects.pest.and.crop.yield_2023
