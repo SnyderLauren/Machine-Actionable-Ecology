@@ -1,14 +1,14 @@
 {
   "@id": "_:n1",
-  "label": "Aphid incidence (250 m radius)",
+  "label": "Plant damage index and cabbage yield",
   "@type": [
     "https://incubating.orkg.org/class/C34001"
   ],
   "P69030": [
-    "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).\n  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded)."
+    "Relationship between plant damage index (percentage of leaf area removed by herbivores) and cabbage yield (mean mass of\n  marketable cabbage heads). Lines are the fixed-effect predictions from the best model without covariables and associated 95% confidence intervals (shaded)."
   ],
   "P69029": [
-    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png"
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.5.png"
   ],
   "P68001": [
     {
@@ -42,7 +42,7 @@
   ],
   "P72001": [
     {
-      "label": "Effect of meadows (250 m radius) on aphid incidence",
+      "label": "Relationship between plant damage index and cabbage yield",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],
@@ -1942,14 +1942,14 @@
     }
   ],
   "P72000": [
-    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R"
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig5.snippet.R"
   ],
   "P68000": [
     "https://doi.org/10.5061/dryad.484tt"
   ],
   "P72002": [
     {
-      "label": "Effect of meadows (250 m radius) on aphid incidence",
+      "label": "Relationship between plant damage index and cabbage yield",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],
@@ -3850,7 +3850,7 @@
   ],
   "P68002": [
     {
-      "label": "Effect of meadows (250 m radius) on aphid incidence",
+      "label": "Relationship between plant damage index and cabbage yield",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],

@@ -137,7 +137,7 @@ orkg$templates$materialize_template(template_id = "R479769")
 tp = orkg$templates$list_templates()
 
 instance <- tp$model_fitting_4(
-  label="Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)", 
+  label="Aphid incidence (250 m radius)", 
   
   
   has_input_dataset="https://doi.org/10.5061/dryad.484tt",
@@ -158,10 +158,10 @@ instance <- tp$model_fitting_4(
     )
   ),
 
-  #Predicted model values to recreate figure 4a (based on model predictions, not the raw data)
+  # Predicted model values to recreate figure 4a (based on model predictions, not the raw data)
   has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Effect of meadows (250 m radius) on aphid incidence'),
 
-  #Output from ANOVA (Type III sum of squares) 
+  # Output from ANOVA (Type III sum of squares) 
   has_output_dataset_2= tuple(anova (fitlme,type='marginal'), 'ANOVA (Type III sum of squares)'),
   
   # Output of summary function on lme (fixed effects)
@@ -171,11 +171,12 @@ instance <- tp$model_fitting_4(
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
   
   # Output statement if applicable.
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).
+  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded).",
   
   # Snippet is essentially a concise version of this script with redundant code removed.
   # Git Repo is currently set to private.
-  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main//Fig4a.snippet.R"
+  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R"
   
 )
 instance$serialize_to_file("article.contribution.1.json", format="json-ld")
