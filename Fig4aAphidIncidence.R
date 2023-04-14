@@ -105,12 +105,16 @@ geom_ribbon(data = newdat.lme, aes(y = NULL, ymin = lower, ymax = upper,
 alpha = .15) +
 geom_line(data = newdat.lme, aes(y = predlme), size = .75)+
 theme_classic()+xlab('Proportion of meadows at 250-m')+ylab('Proportion of plants infested by aphids')
+p1
 
 # Save ggplot figure as png
 ggsave("Fig.4a.png", plot = p1, scale=0.5)
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4a based on the model predictions.
 PredictedValuesAphid_incidence <- newdat.lme
+
+#Drop Aphid_Incidence
+PredictedValuesAphid_incidence  <- subset(PredictedValuesAphid_incidence, select = -c(Aphid_incidence))
 PredictedValuesAphid_incidence 
 # We would like to extract the data from all rows and columns, EXCEPT for the column labeled Aphid_Incidence as this is just the raw data. Description of data in each column: 
 #Year: sampling year (either 2014 or 2015)
@@ -128,18 +132,18 @@ PredictedValuesAphid_incidence
 
 orkg <- ORKG(host="https://incubating.orkg.org/")
 
-# Template 'Model Fitting 4' allows for has_input_dataset as Table as opposed to URI
+# Template 'Model Fitting 4'
 orkg$templates$materialize_template(template_id = "R479769")
 tp = orkg$templates$list_templates()
 
 instance <- tp$model_fitting_4(
   label="Relationship between the proportion of meadows around the experimental fields and aphid incidence (250 m radius)", 
   
-  # Git Repo is currently set to private
-  #has_input_dataset="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Landscape%20affects%20pest%20and%20crop%20yield_2023.csv?",
+  
+  has_input_dataset="https://doi.org/10.5061/dryad.484tt",
   
   # LandscapeData can be used instead of URI
-  has_input_dataset=tuple(LandscapeData, "Suitable title for dataset" ),
+  #has_input_dataset=tuple(LandscapeData, "Landscape affects pest and crop yield" ),
   
   # Description of the statistical model used
   has_input_model=tp$statistical_model(
@@ -153,16 +157,15 @@ instance <- tp$model_fitting_4(
       )
     )
   ),
-  
 
   #Predicted model values to recreate figure 4a (based on model predictions, not the raw data)
-  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Dataset title 1'),
+  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Effect of meadows (250 m radius) on aphid incidence'),
 
   #Output from ANOVA (Type III sum of squares) 
-  has_output_dataset_2= tuple(anova (fitlme,type='marginal'), 'Dataset title 2'),
+  has_output_dataset_2= tuple(anova (fitlme,type='marginal'), 'ANOVA (Type III sum of squares)'),
   
   # Output of summary function on lme (fixed effects)
-  has_output_dataset_3= tuple(sum1$tTable, 'Dataset title 3'),
+  has_output_dataset_3= tuple(sum1$tTable, 'Summary of LME (fixed effects)'),
   
   # PNG output from ggplot - Git Repo is currently set to private.
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
