@@ -39,7 +39,8 @@ library(nlme)#nlme_3.1-152
 library(MuMIn)#MuMIn_1.43.17  
 library (ggplot2)#ggplot2_3.3.6  
 library (visreg)#visreg_2.7.0 
-library(effects)#effects_4.2-0  
+library(effects)#effects_4.2-0
+library(orkg)
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -67,8 +68,8 @@ anova(fitlme.Li,type='marginal')
 
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-summary(fitlme.Li)
-
+sum1 <- summary(fitlme.Li)
+sum1$tTable
 
 newdat.lme.Li  = data.frame(Year = LepidopteranIncidence$Year,
                             mead_1000 = LepidopteranIncidence$mead_1000,
@@ -84,18 +85,21 @@ predvar.Li = diag( des.Li %*% vcov(fitlme.Li) %*% t(des.Li) )
 newdat.lme.Li$lower = with(newdat.lme.Li, predlme.Li - 2*sqrt(predvar.Li) )
 newdat.lme.Li$upper = with(newdat.lme.Li, predlme.Li + 2*sqrt(predvar.Li) )
 
-#ggplot(LepidopteranIncidence, aes(x = mead_1000, y = Lepidoptera_incidence, color = Year) ) +
- # geom_point()+
- # geom_rug(sides = "b", size = 1) +
- # geom_ribbon(data = newdat.lme.Li, aes(y = NULL, ymin = lower, ymax = upper,
-  #                                      color = NULL, fill = Year),
-  #            alpha = .15) +
- # geom_line(data = newdat.lme.Li, aes(y = predlme.Li), size = .75)+
- # theme_classic()+xlab('Proportion of meadows at 1000-m')+ylab('Proportion of plants infested by lepidoptera')
+p1 <- ggplot(LepidopteranIncidence, aes(x = mead_1000, y = Lepidoptera_incidence, color = Year) ) +
+  geom_point()+
+  geom_rug(sides = "b", size = 1) +
+  geom_ribbon(data = newdat.lme.Li, aes(y = NULL, ymin = lower, ymax = upper,
+                                       color = NULL, fill = Year),
+             alpha = .15) +
+  geom_line(data = newdat.lme.Li, aes(y = predlme.Li), size = .75)+
+  theme_classic()+xlab('Proportion of meadows at 1000-m')+ylab('Proportion of plants infested by lepidoptera')
 
+p1
+ggsave("Fig.4c.png", plot = p1, scale=0.5)
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4c based on the model predictions.
 PredictedValuesLepidopteraIncidence <- newdat.lme.Li
+PredictedValuesLepidopteraIncidence <- subset(PredictedValuesLepidopteraIncidence, select = -c(Lepidoptera_incidence))
 PredictedValuesLepidopteraIncidence
 # We would like to extract the data from all rows and columns, EXCEPT for the column labeled Lepidoptera_Incidence as this is just the raw data. Description of data in each column: 
 #Year: sampling year (either 2014 or 2015)
@@ -105,3 +109,59 @@ PredictedValuesLepidopteraIncidence
 #upper: Upper limit of the 95% CI
 
 ###End of script
+
+####################################### 
+############### ORKG ##################
+####################################### 
+
+orkg <- ORKG(host="https://incubating.orkg.org/")
+
+# Template 'Model Fitting 4'
+orkg$templates$materialize_template(template_id = "R479769")
+tp = orkg$templates$list_templates()
+
+instance <- tp$model_fitting_4(
+  label="Lepidoptera incidence (1000m radius)", 
+  
+  
+  has_input_dataset="https://doi.org/10.5061/dryad.484tt",
+  
+  # LandscapeData can be used instead of URI
+  #has_input_dataset=tuple(LandscapeData, "Landscape affects pest and crop yield" ),
+  
+  # Description of the statistical model used
+  has_input_model=tp$statistical_model(
+    label="Mixed-effect model ",
+    is_denoted_by=tp$formula(
+      label="The formula for the mixed-effect model",
+      
+      has_value_specification=tp$value_specification(
+        label="formula",
+        has_specified_value="formula"
+      )
+    )
+  ),
+  
+  # Predicted model values to recreate figure 4c (based on model predictions, not the raw data)
+  has_output_dataset= tuple(PredictedValuesLepidopteraIncidence, 'Effect of meadows (1000 m radius) on Lepidoptera incidence'),
+  
+  # Output from ANOVA (Type III sum of squares) 
+  has_output_dataset_2= tuple(anova(fitlme.Li,type='marginal'), 'ANOVA (Type III sum of squares)'),
+  
+  # Output of summary function on lme (fixed effects)
+  has_output_dataset_3= tuple(sum1$tTable, 'Summary of LME (fixed effects)'),
+  
+  # PNG output from ggplot - Git Repo is currently set to private.
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png",
+  
+  # Output statement if applicable.
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and Lepidoptera
+  (i.e., Pieris rapae, Plutella xylostella, and Trichoplusia ni) incidence (1000 m radius).
+  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded).",
+  
+  # Snippet is essentially a concise version of this script with redundant code removed.
+  # Git Repo is currently set to private.
+  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R"
+  
+)
+instance$serialize_to_file("article.contribution.3.json", format="json-ld")

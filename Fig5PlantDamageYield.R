@@ -40,6 +40,7 @@ library(MuMIn)#MuMIn_1.43.17
 library (ggplot2)#ggplot2_3.3.6  
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0  
+library(orkg)
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
