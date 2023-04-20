@@ -163,8 +163,8 @@ instance <- tp$model_fitting_3(
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
   
   # Output statement if applicable.
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).
-  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded).",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
   
   # Snippet is essentially a concise version of this script with redundant code removed.
   # Git Repo is currently set to private.
