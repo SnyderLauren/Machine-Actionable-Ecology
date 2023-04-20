@@ -40,6 +40,7 @@ library(MuMIn)#MuMIn_1.43.17
 library (ggplot2)#ggplot2_3.3.6  
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0  
+library(orkg)
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -64,8 +65,8 @@ anova(fitlme.fb,type='marginal')
 
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-summary(fitlme.fb)
-
+sum1 <- data.frame(summary(fitlme.fb)$tTable, check.names=FALSE)
+sum1
 
 newdat.lme.fb  = data.frame(Year = LandscapeData$Year,
                             mead_250 = LandscapeData$mead_250,
@@ -82,19 +83,24 @@ predvar.fb = diag( des.fb %*% vcov(fitlme.fb) %*% t(des.fb) )
 newdat.lme.fb$lower = with(newdat.lme.fb, predlme.fb - 2*sqrt(predvar.fb) )
 newdat.lme.fb$upper = with(newdat.lme.fb, predlme.fb + 2*sqrt(predvar.fb) )
 
-#ggplot(LandscapeData, aes(x = mead_250, y = FleaBeetles_abundance, color = Year) ) +
-#  geom_point()+
-#  geom_rug(sides = "b", size = 1) +
-#  geom_ribbon(data = newdat.lme.fb, aes(y = NULL, ymin = lower, ymax = upper,
-#                                        color = NULL, fill = Year),
-#              alpha = .15) +
-#  geom_line(data = newdat.lme.fb, aes(y = predlme.fb), size = .75)+
-#  theme_classic()+xlab('Proportion of meadows at 250-m')+ylab('Mean flea beetles abundance/trap')
+p1 <- ggplot(LandscapeData, aes(x = mead_250, y = FleaBeetles_abundance, color = Year) ) +
+ geom_point()+
+ geom_rug(sides = "b", size = 1) +
+ geom_ribbon(data = newdat.lme.fb, aes(y = NULL, ymin = lower, ymax = upper,
+                                       color = NULL, fill = Year),
+             alpha = .15) +
+ geom_line(data = newdat.lme.fb, aes(y = predlme.fb), size = .75)+
+ theme_classic()+xlab('Proportion of meadows at 250-m')+ylab('Mean flea beetles abundance/trap')
 
+p1
+# Save ggplot figure as png
+ggsave("Fig.4b.png", plot = p1, scale=0.5)
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4b based on the model predictions.
 PredictedValuesFleaBeetlesAbundance <- newdat.lme.fb
+PredictedValuesFleaBeetlesAbundance <- subset(PredictedValuesFleaBeetlesAbundance, select = -c(FleaBeetles_abundance))
 PredictedValuesFleaBeetlesAbundance
+
 # We would like to extract the data from all rows and columns, EXCEPT for the column labeled FleaBeetles_Abundance as this is just the raw data. Description of data in each column: 
 #Year: sampling year (either 2014 or 2015)
 #mead_250: same as described above
@@ -103,3 +109,51 @@ PredictedValuesFleaBeetlesAbundance
 #upper: Upper limit of the 95% CI
 
 ###End of script
+
+####################################### 
+############### ORKG ##################
+####################################### 
+
+orkg <- ORKG(host="https://incubating.orkg.org/")
+
+# Template 'Model Fitting 3'
+orkg$templates$materialize_template(template_id = "R474043")
+tp = orkg$templates$list_templates()
+
+instance <- tp$model_fitting_3(
+  label="Flea beetle abundance (250 m radius)", 
+  
+  
+  has_input_dataset="https://doi.org/10.5061/dryad.484tt",
+  
+  
+  # Description of the statistical model used
+  has_input_model=tp$statistical_model(
+    label="Linear mixed model (LMM) with flea beetle abundance (FleaBeetles_abundance) as response and proportion of meadows at 250 m radius (mead_250) as predictor variable",
+    is_denoted_by=tp$formula(
+      label="The formula of the LMM with FleaBeetles_abundance as response and mead_250 as predictor variable",
+      
+      has_value_specification=tp$value_specification(
+        label="lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)",
+        has_specified_value="lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)"
+      )
+    )
+  ),
+  
+  # Output of summary function on lme (fixed effects)
+  has_output_dataset= tuple(sum1, 'Effect of meadows (250 m radius) on flea beetle abundance'),
+  
+  
+  # PNG output from ggplot - Git Repo is currently set to private.
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4b.png",
+  
+  # Output statement if applicable.
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).
+  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded).",
+  
+  # Snippet is essentially a concise version of this script with redundant code removed.
+  # Git Repo is currently set to private.
+  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4b.snippet.R"
+  
+)
+instance$serialize_to_file("article.contribution.2.json", format="json-ld")

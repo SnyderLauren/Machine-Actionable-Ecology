@@ -1,0 +1,253 @@
+{
+  "@id": "_:n1",
+  "label": "Aphid incidence (250 m radius)",
+  "@type": [
+    "https://incubating.orkg.org/class/C33000"
+  ],
+  "P69030": [
+    "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).\n  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded)."
+  ],
+  "P72000": [
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R"
+  ],
+  "P69029": [
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png"
+  ],
+  "P68002": [
+    {
+      "label": "Results of LMM with aphid incidence as response and proportion of meadows at 250 m radius as predictor variable",
+      "@type": [
+        "https://incubating.orkg.org/class/Table"
+      ],
+      "columns": [
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Value",
+          "number": 1,
+          "@id": "_:n2"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Std.Error",
+          "number": 2,
+          "@id": "_:n3"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "DF",
+          "number": 3,
+          "@id": "_:n4"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "t-value",
+          "number": 4,
+          "@id": "_:n5"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "p-value",
+          "number": 5,
+          "@id": "_:n6"
+        }
+      ],
+      "rows": [
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "(Intercept)",
+          "number": 1,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0449",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0791",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "21.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5668",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5768",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "mead_250",
+          "number": 2,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5791",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1866",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "21.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "3.1029",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0054",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Year2015",
+          "number": 3,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3225",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0582",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "21.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "5.5384",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0",
+              "column": "_:n6"
+            }
+          ]
+        }
+      ],
+      "@id": "_:n7"
+    }
+  ],
+  "P68000": [
+    "https://doi.org/10.5061/dryad.484tt"
+  ],
+  "P68001": [
+    {
+      "@id": "_:n8",
+      "label": "Linear mixed model (LMM) with aphid incidence (Aphid_incidence) as response and proportion of meadows at 250 m radius (mead_250) as predictor variable",
+      "@type": [
+        "https://incubating.orkg.org/class/C31006"
+      ],
+      "P68003": [
+        {
+          "@id": "_:n9",
+          "label": "The formula of the LMM with Aphid_incidence as response and mead_250 as predictor variable",
+          "@type": [
+            "https://incubating.orkg.org/class/C31004"
+          ],
+          "P4009": [
+            {
+              "@id": "_:n10",
+              "label": "lme(sqrt(Aphid_incidence)~  mead_250+Year, data = AphidsIncidence, random=~1|Farm_ID/Plot_ID)",
+              "@type": [
+                "https://incubating.orkg.org/class/C31008"
+              ],
+              "P68004": [
+                "lme(sqrt(Aphid_incidence)~  mead_250+Year, data = AphidsIncidence, random=~1|Farm_ID/Plot_ID)"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@context": {
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "P69029": "https://incubating.orkg.org/property/P69029",
+    "P69030": "https://incubating.orkg.org/property/P69030",
+    "P68000": "https://incubating.orkg.org/property/P68000",
+    "P68001": "https://incubating.orkg.org/property/P68001",
+    "P68002": "https://incubating.orkg.org/property/P68002",
+    "P68003": "https://incubating.orkg.org/property/P68003",
+    "P68004": "https://incubating.orkg.org/property/P68004",
+    "P4009": "https://incubating.orkg.org/property/P4009",
+    "P72000": "https://incubating.orkg.org/property/P72000",
+    "columns": "https://incubating.orkg.org/property/CSVW_Columns",
+    "name": "https://incubating.orkg.org/property/CSVW_Name",
+    "number": "https://incubating.orkg.org/property/CSVW_Number",
+    "rows": "https://incubating.orkg.org/property/CSVW_Rows",
+    "cells": "https://incubating.orkg.org/property/CSVW_Cells",
+    "value": "https://incubating.orkg.org/property/CSVW_Value",
+    "titles": "https://incubating.orkg.org/property/CSVW_Titles"
+  }
+}
