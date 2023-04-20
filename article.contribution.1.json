@@ -5,7 +5,7 @@
     "https://incubating.orkg.org/class/C33000"
   ],
   "P69030": [
-    "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).\n  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded)."
+    "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
   ],
   "P72000": [
     "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R"
