@@ -218,12 +218,12 @@
           "P4009": [
             {
               "@id": "_:n10",
-              "label": "lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)",
+              "label": "FleaBeetles_abundance ~  mead_250 + Year + (1|Farm_ID/Plot_ID)",
               "@type": [
                 "https://incubating.orkg.org/class/C31008"
               ],
               "P68004": [
-                "lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)"
+                "FleaBeetles_abundance ~  mead_250 + Year + (1|Farm_ID/Plot_ID)"
               ]
             }
           ]
