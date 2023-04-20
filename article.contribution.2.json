@@ -1,11 +1,11 @@
 {
   "@id": "_:n1",
-  "label": "Flea beetle abundance (250 m radius)",
+  "label": "LMM evaluating the effect of study year and the proportion of meadows on flea beetle abundance in experimental farm plots.",
   "@type": [
     "https://incubating.orkg.org/class/C33000"
   ],
   "P69030": [
-    "Relationship between the proportion of meadows around the experimental fields and flea beetle abundance (250 m radius).\n  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded)."
+    "Relationship between the proportion of meadows around the experimental fields (250 m radius) and flea beetle abundance. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
   ],
   "P72000": [
     "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4b.snippet.R"
@@ -15,7 +15,7 @@
   ],
   "P68002": [
     {
-      "label": "Results of LMM with FleaBeetles_abundance as response and mead_250 as predictor variable",
+      "label": "Results of LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects.",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],
@@ -204,14 +204,14 @@
   "P68001": [
     {
       "@id": "_:n8",
-      "label": "Linear mixed model (LMM) with flea beetle abundance (FleaBeetles_abundance) as response and proportion of meadows at 250 m radius (mead_250) as predictor variable",
+      "label": "A linear mixed model (LMM) with flea beetle abundance (FleaBeetles_abundance) as the response variable, study year (Year) and the proportion of meadows within a 250 meter\n    radius of the experimental farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
       "@type": [
         "https://incubating.orkg.org/class/C31006"
       ],
       "P68003": [
         {
           "@id": "_:n9",
-          "label": "The formula of the LMM with FleaBeetles_abundance as response and mead_250 as predictor variable",
+          "label": "The formula of the LMM with FleaBeetles_abundance as the response variable, Year and mead_250 as fixed effects, and Farm_ID and Plot_ID as random effects.",
           "@type": [
             "https://incubating.orkg.org/class/C31004"
           ],
