@@ -15,7 +15,7 @@
   ],
   "P68002": [
     {
-      "label": "Effect of meadows (250 m radius) on flea beetle abundance",
+      "label": "Results of LMM with FleaBeetles_abundance as response and mead_250 as predictor variable",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],

@@ -15,7 +15,7 @@
   ],
   "P68002": [
     {
-      "label": "Results of LMM with aphid incidence as response and proportion of meadows at 250 m radius as predictor variable",
+      "label": "Results of LMM with Aphid_incidence as response and mead_250 as predictor variable",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],

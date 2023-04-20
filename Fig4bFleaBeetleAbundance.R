@@ -141,7 +141,7 @@ instance <- tp$model_fitting_3(
   ),
   
   # Output of summary function on lme (fixed effects)
-  has_output_dataset= tuple(sum1, 'Effect of meadows (250 m radius) on flea beetle abundance'),
+  has_output_dataset= tuple(sum1, 'Results of LMM with FleaBeetles_abundance as response and mead_250 as predictor variable'),
   
   
   # PNG output from ggplot - Git Repo is currently set to private.
