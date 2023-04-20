@@ -1,11 +1,11 @@
 {
   "@id": "_:n1",
-  "label": "Lepidoptera incidence (1000m radius)",
+  "label": "LMM evaluating the effect of study year and the proportion of meadows on lepidoptera incidence in experimental farm plots.",
   "@type": [
     "https://incubating.orkg.org/class/C33000"
   ],
   "P69030": [
-    "Relationship between the proportion of meadows around the experimental fields and Lepidoptera\n  (i.e., Pieris rapae, Plutella xylostella, and Trichoplusia ni) incidence (1000 m radius).\n  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded)."
+    "Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
   ],
   "P72000": [
     "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R"
@@ -15,7 +15,7 @@
   ],
   "P68002": [
     {
-      "label": "Results of LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
+      "label": "Results of LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects.",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],
@@ -204,14 +204,14 @@
   "P68001": [
     {
       "@id": "_:n8",
-      "label": "Linear mixed model (LMM) with lepidoptera incidence (LepidopteranIncidence) as response and proportion of meadows at 1000 m radius (mead_1000) as predictor variable",
+      "label": "A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental farm plot\n    (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
       "@type": [
         "https://incubating.orkg.org/class/C31006"
       ],
       "P68003": [
         {
           "@id": "_:n9",
-          "label": "Formula for LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
+          "label": "The formula of the LMM with Lepidoptera_incidence as the response variable, Year and mead_1000 as fixed effects, and Farm_ID and Plot_ID as random effects.",
           "@type": [
             "https://incubating.orkg.org/class/C31004"
           ],

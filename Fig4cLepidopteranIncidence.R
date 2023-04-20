@@ -121,16 +121,17 @@ orkg$templates$materialize_template(template_id = "R474043")
 tp = orkg$templates$list_templates()
 
 instance <- tp$model_fitting_3(
-  label="Lepidoptera incidence (1000m radius)", 
+  label="LMM evaluating the effect of study year and the proportion of meadows on lepidoptera incidence in experimental farm plots.", 
   
   
   has_input_dataset="https://doi.org/10.5061/dryad.484tt",
   
   # Description of the statistical model used
   has_input_model=tp$statistical_model(
-    label="Linear mixed model (LMM) with lepidoptera incidence (LepidopteranIncidence) as response and proportion of meadows at 1000 m radius (mead_1000) as predictor variable",
+    label="A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental farm plot
+    (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
     is_denoted_by=tp$formula(
-      label="Formula for LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
+      label="The formula of the LMM with Lepidoptera_incidence as the response variable, Year and mead_1000 as fixed effects, and Farm_ID and Plot_ID as random effects.",
       
       has_value_specification=tp$value_specification(
         label="Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)",
@@ -140,16 +141,15 @@ instance <- tp$model_fitting_3(
   ),
   
   # Output of summary function on lme (fixed effects)
-  has_output_dataset= tuple(sum1, 'Results of LMM with LepidopteranIncidence as response and mead_1000 as predictor variable'),
+  has_output_dataset= tuple(sum1, 'Results of LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects.'),
   
   
   # PNG output from ggplot - Git Repo is currently set to private.
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png",
   
   # Output statement if applicable.
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields and Lepidoptera
-  (i.e., Pieris rapae, Plutella xylostella, and Trichoplusia ni) incidence (1000 m radius).
-  Lines are the fixed-effect predictions from the best models without covariables and associated 95% confidence intervals (shaded).",
+  has_output_statement="Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
   
   # Snippet is essentially a concise version of this script with redundant code removed.
   # Git Repo is currently set to private.
