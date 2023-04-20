@@ -218,12 +218,12 @@
           "P4009": [
             {
               "@id": "_:n10",
-              "label": "lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)",
+              "label": "Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)",
               "@type": [
                 "https://incubating.orkg.org/class/C31008"
               ],
               "P68004": [
-                "lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)"
+                "Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)"
               ]
             }
           ]
