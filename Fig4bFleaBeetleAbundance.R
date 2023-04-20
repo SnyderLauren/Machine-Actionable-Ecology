@@ -134,8 +134,8 @@ instance <- tp$model_fitting_3(
       label="The formula of the LMM with FleaBeetles_abundance as response and mead_250 as predictor variable",
       
       has_value_specification=tp$value_specification(
-        label="lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)",
-        has_specified_value="lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)"
+        label="FleaBeetles_abundance ~  mead_250 + Year + (1|Farm_ID/Plot_ID)",
+        has_specified_value="FleaBeetles_abundance ~  mead_250 + Year + (1|Farm_ID/Plot_ID)"
       )
     )
   ),

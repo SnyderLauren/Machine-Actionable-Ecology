@@ -133,8 +133,8 @@ instance <- tp$model_fitting_3(
       label="Formula for LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
       
       has_value_specification=tp$value_specification(
-        label="lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)",
-        has_specified_value="lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)"
+        label="Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)",
+        has_specified_value="Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)"
       )
     )
   ),
