@@ -156,7 +156,7 @@ instance <- tp$model_fitting_3(
   ),
   
   # Output of summary function on lme (fixed effects)
-  has_output_dataset= tuple(sum1, 'Results of LMM with aphid incidence as response and proportion of meadows at 250 m radius as predictor variable'),
+  has_output_dataset= tuple(sum1, 'Results of LMM with Aphid_incidence as response and mead_250 as predictor variable'),
   
   # PNG output from ggplot - Git Repo is currently set to private.
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",

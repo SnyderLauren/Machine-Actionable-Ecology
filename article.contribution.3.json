@@ -15,7 +15,7 @@
   ],
   "P68002": [
     {
-      "label": "Effect of meadows (1000 m radius) on lepidoptera incidence",
+      "label": "Results of LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
       "@type": [
         "https://incubating.orkg.org/class/Table"
       ],
