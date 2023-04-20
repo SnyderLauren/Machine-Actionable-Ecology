@@ -60,8 +60,8 @@ fitlme <- lme(sqrt(Aphid_incidence)~  mead_250+Year, data = AphidsIncidence, ran
 anova (fitlme,type='marginal')
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-sum1 <- summary(fitlme)
-sum1$tTable
+sum1 <- data.frame(summary(fitlme)$tTable, check.names=FALSE)
+sum1 
 
 #Next, create a new dataset from which we will make predictions
 newdat.lme = data.frame(Year = AphidsIncidence$Year,
@@ -101,6 +101,4 @@ p1
 PredictedValuesAphid_incidence <- newdat.lme
 PredictedValuesAphid_incidence  <- subset(PredictedValuesAphid_incidence, select = -c(Aphid_incidence))
 PredictedValuesAphid_incidence 
-
 ###End of script
-

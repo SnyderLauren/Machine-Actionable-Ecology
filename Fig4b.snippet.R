@@ -64,8 +64,8 @@ anova(fitlme.fb,type='marginal')
 
 
 # Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-sum1 <- summary(fitlme.fb)
-sum1$tTable
+sum1 <- data.frame(summary(fitlme.fb)$tTable, check.names=FALSE)
+sum1
 
 newdat.lme.fb  = data.frame(Year = LandscapeData$Year,
                             mead_250 = LandscapeData$mead_250,

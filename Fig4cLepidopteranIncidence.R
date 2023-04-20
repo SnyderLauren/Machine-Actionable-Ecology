@@ -68,8 +68,8 @@ anova(fitlme.Li,type='marginal')
 
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
-sum1 <- summary(fitlme.Li)
-sum1$tTable
+sum1 <- data.frame(summary(fitlme.Li)$tTable, check.names=FALSE)
+sum1 
 
 newdat.lme.Li  = data.frame(Year = LepidopteranIncidence$Year,
                             mead_1000 = LepidopteranIncidence$mead_1000,
@@ -116,40 +116,32 @@ PredictedValuesLepidopteraIncidence
 
 orkg <- ORKG(host="https://incubating.orkg.org/")
 
-# Template 'Model Fitting 4'
-orkg$templates$materialize_template(template_id = "R479769")
+# Template 'Model Fitting 3'
+orkg$templates$materialize_template(template_id = "R474043")
 tp = orkg$templates$list_templates()
 
-instance <- tp$model_fitting_4(
+instance <- tp$model_fitting_3(
   label="Lepidoptera incidence (1000m radius)", 
   
   
   has_input_dataset="https://doi.org/10.5061/dryad.484tt",
   
-  # LandscapeData can be used instead of URI
-  #has_input_dataset=tuple(LandscapeData, "Landscape affects pest and crop yield" ),
-  
   # Description of the statistical model used
   has_input_model=tp$statistical_model(
-    label="Mixed-effect model ",
+    label="Linear mixed model (LMM) with lepidoptera incidence (LepidopteranIncidence) as response and proportion of meadows at 1000 m radius (mead_1000) as predictor variable",
     is_denoted_by=tp$formula(
-      label="The formula for the mixed-effect model",
+      label="Formula for LMM with LepidopteranIncidence as response and mead_1000 as predictor variable",
       
       has_value_specification=tp$value_specification(
-        label="formula",
-        has_specified_value="formula"
+        label="lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)",
+        has_specified_value="lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)"
       )
     )
   ),
   
-  # Predicted model values to recreate figure 4c (based on model predictions, not the raw data)
-  has_output_dataset= tuple(PredictedValuesLepidopteraIncidence, 'Effect of meadows (1000 m radius) on Lepidoptera incidence'),
-  
-  # Output from ANOVA (Type III sum of squares) 
-  has_output_dataset_2= tuple(anova(fitlme.Li,type='marginal'), 'ANOVA (Type III sum of squares)'),
-  
   # Output of summary function on lme (fixed effects)
-  has_output_dataset_3= tuple(sum1$tTable, 'Summary of LME (fixed effects)'),
+  has_output_dataset= tuple(sum1, 'Effect of meadows (1000 m radius) on lepidoptera incidence'),
+  
   
   # PNG output from ggplot - Git Repo is currently set to private.
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png",
