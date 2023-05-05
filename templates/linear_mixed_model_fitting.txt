@@ -4,7 +4,8 @@ linear_mixed_model_fitting [http://purl.obolibrary.org/obo/STATO_0000218] (a pla
   has_specified_output / has_output_data_item :: data_item [http://purl.obolibrary.org/obo/IAO_0000027]
   has_specified_input / has_input_model :: linear_mixed_model [http://purl.obolibrary.org/obo/STATO_0000464] (a statistical_model)
     is_model_for / has_response_variable :: response_variable (a study_design_dependent_variable) [http://purl.obolibrary.org/obo/OBI_0000751]
-    has_part / has_fixed_effect_term :: model_fixed_effect_term [http://purl.obolibrary.org/obo/STATO_0000468]
+    has_part / has_fixed_effect_term_1 :: model_fixed_effect_term [http://purl.obolibrary.org/obo/STATO_0000468]
+    has_part / has_fixed_effect_term_2 :: model_fixed_effect_term [http://purl.obolibrary.org/obo/STATO_0000468]
     has_part / has_random_effect_term :: model_random_effect_term [http://purl.obolibrary.org/obo/STATO_0000467]
 
 variable [http://purl.obolibrary.org/obo/STATO_0000258, https://w3id.org/iadopt/ont/Variable] (sub-template for response_variable, model_fixed_effect_term, model_random_effect_term)
