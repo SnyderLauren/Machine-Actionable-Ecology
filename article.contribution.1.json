@@ -38,7 +38,7 @@
                 "http://purl.obolibrary.org/obo/NCIT_C41129"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ],
@@ -65,7 +65,7 @@
                 "http://purl.obolibrary.org/obo/ENVO_00000108"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ]
@@ -95,7 +95,7 @@
                 "http://purl.obolibrary.org/obo/NCIT_C29848"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ]
@@ -119,7 +119,7 @@
                 "http://purl.obolibrary.org/obo/AGRO_00000301"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ],
@@ -146,7 +146,7 @@
                 "http://purl.obolibrary.org/obo/OMIT_0002433"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ]
@@ -173,7 +173,7 @@
                 "http://purl.obolibrary.org/obo/NCIT_C48953"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ],
@@ -191,7 +191,7 @@
                 "http://purl.obolibrary.org/obo/AGRO_00000301"
               ],
               "P75006": [
-                "character"
+                ""
               ]
             }
           ]
