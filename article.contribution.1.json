@@ -36,9 +36,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/NCIT_C41129"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ],
@@ -63,9 +60,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/ENVO_00000108"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ]
@@ -78,12 +72,6 @@
           "@type": [
             "https://incubating.orkg.org/class/C37002"
           ],
-          "P75005": [
-            {}
-          ],
-          "P6004": [
-            {}
-          ],
           "P75004": [
             {
               "@id": "_:n8",
@@ -93,9 +81,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/NCIT_C29848"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ]
@@ -117,9 +102,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/AGRO_00000301"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ],
@@ -144,9 +126,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/OMIT_0002433"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ]
@@ -171,14 +150,8 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/NCIT_C48953"
-              ],
-              "P75006": [
-                ""
               ]
             }
-          ],
-          "P6004": [
-            {}
           ],
           "P75004": [
             {
@@ -189,9 +162,6 @@
               ],
               "SAME_AS": [
                 "http://purl.obolibrary.org/obo/AGRO_00000301"
-              ],
-              "P75006": [
-                ""
               ]
             }
           ]
@@ -2290,6 +2260,7 @@
     "P6004": "https://incubating.orkg.org/property/P6004",
     "P69029": "https://incubating.orkg.org/property/P69029",
     "P69030": "https://incubating.orkg.org/property/P69030",
+    "SAME_AS": "https://incubating.orkg.org/property/SAME_AS",
     "P68000": "https://incubating.orkg.org/property/P68000",
     "P68001": "https://incubating.orkg.org/property/P68001",
     "P68002": "https://incubating.orkg.org/property/P68002",
@@ -2298,7 +2269,6 @@
     "P75003": "https://incubating.orkg.org/property/P75003",
     "P75004": "https://incubating.orkg.org/property/P75004",
     "P75005": "https://incubating.orkg.org/property/P75005",
-    "P75006": "https://incubating.orkg.org/property/P75006",
     "P76000": "https://incubating.orkg.org/property/P76000",
     "P72000": "https://incubating.orkg.org/property/P72000",
     "columns": "https://incubating.orkg.org/property/CSVW_Columns",
