@@ -1,17 +1,2054 @@
 {
   "@id": "_:n1",
-  "label": "LMM evaluating the effect of study year and the proportion of meadows on lepidoptera incidence in experimental farm plots.",
+  "label": "Lepidoptera incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 1000 meter radius as fixed effects.",
   "@type": [
-    "https://incubating.orkg.org/class/C33000"
-  ],
-  "P69030": [
-    "Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
-  ],
-  "P72000": [
-    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R"
+    "https://incubating.orkg.org/class/C37001"
   ],
   "P69029": [
     "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png"
+  ],
+  "P68000": [
+    {
+      "label": "Input data set label",
+      "@type": [
+        "https://incubating.orkg.org/class/Table"
+      ],
+      "columns": [
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Year",
+          "number": 1,
+          "@id": "_:n2"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Farm_ID",
+          "number": 2,
+          "@id": "_:n3"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Plot_ID",
+          "number": 3,
+          "@id": "_:n4"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "Lepidoptera_incidence",
+          "number": 4,
+          "@id": "_:n5"
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Column"
+          ],
+          "titles": "mead_250",
+          "number": 5,
+          "@id": "_:n6"
+        }
+      ],
+      "rows": [
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 1",
+          "number": 1,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "A",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "1.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 2",
+          "number": 2,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "A",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2794",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 3",
+          "number": 3,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "B",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "3.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2864",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 4",
+          "number": 4,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "B",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "4.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.4667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1933",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 5",
+          "number": 5,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "C",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "5.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.6",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.27",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 6",
+          "number": 6,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "C",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "6.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.6667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2536",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 8",
+          "number": 7,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "D",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "8.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2936",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 9",
+          "number": 8,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "E",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "9.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1818",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 10",
+          "number": 9,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "E",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "10.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.4333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.036",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 11",
+          "number": 10,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "F",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "11.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3769",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 12",
+          "number": 11,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "F",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "12.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3824",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 13",
+          "number": 12,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "G",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "13.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1238",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 14",
+          "number": 13,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "G",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "14.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1598",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 15",
+          "number": 14,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "H",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "15.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3663",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 16",
+          "number": 15,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "H",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "16.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 18",
+          "number": 16,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "J",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "19.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3005",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 19",
+          "number": 17,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "J",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "20.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.7143",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 20",
+          "number": 18,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "K",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "21.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.7",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3627",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 21",
+          "number": 19,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2015.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "K",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "22.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.4",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.4867",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 22",
+          "number": 20,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "L",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "23.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2308",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 23",
+          "number": 21,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "L",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "24.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0995",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 24",
+          "number": 22,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "G",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "25.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2262",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 25",
+          "number": 23,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "G",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "26.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5339",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 26",
+          "number": 24,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "A",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "27.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.7149",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 27",
+          "number": 25,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "A",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "28.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5294",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 28",
+          "number": 26,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "M",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "29.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3495",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 29",
+          "number": 27,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "M ",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "30.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2621",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 30",
+          "number": 28,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "B",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "31.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3575",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 31",
+          "number": 29,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "B",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "32.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3348",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 32",
+          "number": 30,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "C",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "33.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5611",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 33",
+          "number": 31,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "C",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "34.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5183",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 34",
+          "number": 32,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "D",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "35.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2398",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 35",
+          "number": 33,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "D ",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "36.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2667",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0543",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 36",
+          "number": 34,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "J",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "37.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2398",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 37",
+          "number": 35,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "J ",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "38.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3348",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 38",
+          "number": 36,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "N",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "39.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.4887",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 39",
+          "number": 37,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "N ",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "40.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.2",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.267",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 40",
+          "number": 38,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "K",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "41.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5249",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 41",
+          "number": 39,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "K",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "42.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.1",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.6109",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 42",
+          "number": 40,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "E",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "43.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.3213",
+              "column": "_:n6"
+            }
+          ]
+        },
+        {
+          "@type": [
+            "https://incubating.orkg.org/class/Row"
+          ],
+          "titles": "Row 43",
+          "number": 41,
+          "cells": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "2014.0",
+              "column": "_:n2"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "E ",
+              "column": "_:n3"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "44.0",
+              "column": "_:n4"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0333",
+              "column": "_:n5"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.181",
+              "column": "_:n6"
+            }
+          ]
+        }
+      ],
+      "@id": "_:n7"
+    }
+  ],
+  "P68001": [
+    {
+      "@id": "_:n8",
+      "label": "A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental \n  farm plot (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
+      "@type": [
+        "https://incubating.orkg.org/class/C37000"
+      ],
+      "P75003": [
+        {
+          "@id": "_:n9",
+          "label": "Plot and farm",
+          "@type": [
+            "https://incubating.orkg.org/class/C37002"
+          ],
+          "P75005": [
+            {
+              "@id": "_:n10",
+              "label": "Farm",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/NCIT_C48953"
+              ]
+            }
+          ],
+          "P75004": [
+            {
+              "@id": "_:n11",
+              "label": "Agricultural experimental plot",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/AGRO_00000301"
+              ]
+            }
+          ]
+        }
+      ],
+      "P75000": [
+        {
+          "@id": "_:n12",
+          "label": "Lepidoptera incidence in an agricultural experimental plot",
+          "@type": [
+            "https://incubating.orkg.org/class/C37002"
+          ],
+          "P75005": [
+            {
+              "@id": "_:n13",
+              "label": "Agricultural experimental plot",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/AGRO_00000301"
+              ]
+            }
+          ],
+          "P6004": [
+            {
+              "@id": "_:n14",
+              "label": "Incidence",
+              "@type": [
+                "https://incubating.orkg.org/class/C37004"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/NCIT_C16726"
+              ]
+            }
+          ],
+          "P75004": [
+            {
+              "@id": "_:n15",
+              "label": "Lepidoptera",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/OMIT_0009010"
+              ]
+            }
+          ]
+        }
+      ],
+      "P75002": [
+        {
+          "@id": "_:n16",
+          "label": "Year",
+          "@type": [
+            "https://incubating.orkg.org/class/C37002"
+          ],
+          "P75004": [
+            {
+              "@id": "_:n17",
+              "label": "Year",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/NCIT_C29848"
+              ]
+            }
+          ]
+        }
+      ],
+      "P76000": [
+        {
+          "@id": "_:n18",
+          "label": "Meadow proportion in a region with 1000 m radius",
+          "@type": [
+            "https://incubating.orkg.org/class/C37002"
+          ],
+          "P75005": [
+            {
+              "@id": "_:n19",
+              "label": "Region",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/NCIT_C41129"
+              ]
+            }
+          ],
+          "P6004": [
+            {
+              "@id": "_:n20",
+              "label": "Proportion",
+              "@type": [
+                "https://incubating.orkg.org/class/C37004"
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/NCIT_C49159"
+              ]
+            }
+          ],
+          "P75004": [
+            {
+              "@id": "_:n21",
+              "label": "Meadow",
+              "@type": [
+                "https://incubating.orkg.org/class/C37003"
+              ],
+              "P75006": [
+                {
+                  "@id": "_:n22",
+                  "label": "250 m radius",
+                  "@type": [
+                    "https://incubating.orkg.org/class/C38008"
+                  ],
+                  "P45076": [
+                    {
+                      "@id": "_:n23",
+                      "label": "m",
+                      "@type": [
+                        "https://incubating.orkg.org/class/C38009"
+                      ],
+                      "SAME_AS": [
+                        "http://qudt.org/vocab/unit/M"
+                      ],
+                      "P45081": [
+                        "m"
+                      ]
+                    }
+                  ],
+                  "P45075": [
+                    {
+                      "@id": "_:n24",
+                      "label": "250",
+                      "@type": [
+                        "https://incubating.orkg.org/class/Decimal"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "SAME_AS": [
+                "http://purl.obolibrary.org/obo/ENVO_00000108"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ],
   "P68002": [
     {
@@ -26,7 +2063,7 @@
           ],
           "titles": "Value",
           "number": 1,
-          "@id": "_:n2"
+          "@id": "_:n25"
         },
         {
           "@type": [
@@ -34,7 +2071,7 @@
           ],
           "titles": "Std.Error",
           "number": 2,
-          "@id": "_:n3"
+          "@id": "_:n26"
         },
         {
           "@type": [
@@ -42,7 +2079,7 @@
           ],
           "titles": "DF",
           "number": 3,
-          "@id": "_:n4"
+          "@id": "_:n27"
         },
         {
           "@type": [
@@ -50,7 +2087,7 @@
           ],
           "titles": "t-value",
           "number": 4,
-          "@id": "_:n5"
+          "@id": "_:n28"
         },
         {
           "@type": [
@@ -58,7 +2095,7 @@
           ],
           "titles": "p-value",
           "number": 5,
-          "@id": "_:n6"
+          "@id": "_:n29"
         }
       ],
       "rows": [
@@ -74,35 +2111,35 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.4192",
-              "column": "_:n2"
+              "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.0736",
-              "column": "_:n3"
+              "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "21.0",
-              "column": "_:n4"
+              "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "5.6991",
-              "column": "_:n5"
+              "column": "_:n28"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.0",
-              "column": "_:n6"
+              "column": "_:n29"
             }
           ]
         },
@@ -118,35 +2155,35 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "-0.4582",
-              "column": "_:n2"
+              "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.2047",
-              "column": "_:n3"
+              "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "21.0",
-              "column": "_:n4"
+              "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "-2.2387",
-              "column": "_:n5"
+              "column": "_:n28"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.0361",
-              "column": "_:n6"
+              "column": "_:n29"
             }
           ]
         },
@@ -162,86 +2199,68 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.2669",
-              "column": "_:n2"
+              "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.0425",
-              "column": "_:n3"
+              "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "21.0",
-              "column": "_:n4"
+              "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "6.2842",
-              "column": "_:n5"
+              "column": "_:n28"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "3.1207e-06",
-              "column": "_:n6"
+              "column": "_:n29"
             }
           ]
         }
       ],
-      "@id": "_:n7"
+      "@id": "_:n30"
     }
   ],
-  "P68000": [
-    "https://doi.org/10.5061/dryad.484tt"
+  "P72000": [
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R"
   ],
-  "P68001": [
-    {
-      "@id": "_:n8",
-      "label": "A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental farm plot\n    (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
-      "@type": [
-        "https://incubating.orkg.org/class/C31006"
-      ],
-      "P68003": [
-        {
-          "@id": "_:n9",
-          "label": "The formula of the LMM with Lepidoptera_incidence as the response variable, Year and mead_1000 as fixed effects, and Farm_ID and Plot_ID as random effects.",
-          "@type": [
-            "https://incubating.orkg.org/class/C31004"
-          ],
-          "P4009": [
-            {
-              "@id": "_:n10",
-              "label": "Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)",
-              "@type": [
-                "https://incubating.orkg.org/class/C31008"
-              ],
-              "P68004": [
-                "Lepidoptera_incidence) ~  mead_1000 + Year + (1|Farm_ID/Plot_ID)"
-              ]
-            }
-          ]
-        }
-      ]
-    }
+  "P69030": [
+    "Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
   ],
   "@context": {
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "P45076": "https://incubating.orkg.org/property/P45076",
+    "P6004": "https://incubating.orkg.org/property/P6004",
     "P69029": "https://incubating.orkg.org/property/P69029",
     "P69030": "https://incubating.orkg.org/property/P69030",
+    "SAME_AS": "https://incubating.orkg.org/property/SAME_AS",
+    "P45081": "https://incubating.orkg.org/property/P45081",
     "P68000": "https://incubating.orkg.org/property/P68000",
     "P68001": "https://incubating.orkg.org/property/P68001",
     "P68002": "https://incubating.orkg.org/property/P68002",
-    "P68003": "https://incubating.orkg.org/property/P68003",
-    "P68004": "https://incubating.orkg.org/property/P68004",
-    "P4009": "https://incubating.orkg.org/property/P4009",
+    "P75000": "https://incubating.orkg.org/property/P75000",
+    "P75002": "https://incubating.orkg.org/property/P75002",
+    "P75003": "https://incubating.orkg.org/property/P75003",
+    "P75004": "https://incubating.orkg.org/property/P75004",
+    "P75005": "https://incubating.orkg.org/property/P75005",
+    "P75006": "https://incubating.orkg.org/property/P75006",
+    "P76000": "https://incubating.orkg.org/property/P76000",
     "P72000": "https://incubating.orkg.org/property/P72000",
+    "P45075": "https://incubating.orkg.org/property/P45075",
     "columns": "https://incubating.orkg.org/property/CSVW_Columns",
     "name": "https://incubating.orkg.org/property/CSVW_Name",
     "number": "https://incubating.orkg.org/property/CSVW_Number",

@@ -1,6 +1,6 @@
 {
   "@id": "_:n1",
-  "label": "Aphid incidence in experimental farm plots evaluated by a LMM with study year and proportion of meadows as fixed effects.",
+  "label": "Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects..",
   "@type": [
     "https://incubating.orkg.org/class/C37001"
   ],
@@ -1970,7 +1970,7 @@
           "P6004": [
             {
               "@id": "_:n14",
-              "label": "Agricultural experimental plot",
+              "label": "Incidence",
               "@type": [
                 "https://incubating.orkg.org/class/C37004"
               ],

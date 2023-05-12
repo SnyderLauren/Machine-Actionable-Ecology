@@ -125,50 +125,92 @@ PredictedValuesAphid_incidence
 
 ###End of script
 
+#Input data set
+inputDF <- AphidsIncidence[, c("Year", "Farm_ID", "Plot_ID", "Aphid_incidence", "mead_250")]
 
 ####################################### 
 ############### ORKG ##################
 ####################################### 
 
-orkg <- ORKG(host="https://incubating.orkg.org/")
-
+orkg <- ORKG(host="https://incubating.orkg.org")
 # Template 'Model Fitting 3'
-orkg$templates$materialize_template(template_id = "R474043")
+orkg$templates$materialize_template(template_id = "R488000")
 tp = orkg$templates$list_templates()
+keys(tp)
+tp$linear_mixed_model_fitting(text= 'doc')
+tp$linear_mixed_model(text= 'doc')
 
-instance <- tp$model_fitting_3(
-  label="LMM evaluating the effect of study year and the proportion of meadows on aphid incidence in experimental farm plots.", 
-  
-  
-  has_input_dataset="https://doi.org/10.5061/dryad.484tt",
-  
-  # Description of the statistical model used
-  has_input_model=tp$statistical_model(
-    label="A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental farm plot
-    (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
-    is_denoted_by=tp$formula(
-      label="The formula of the LMM with Aphid_incidence as the response variable, Year and mead_250 as fixed effects, and Farm_ID and Plot_ID as random effects.",
-      
-      has_value_specification=tp$value_specification(
-        label="Aphid_incidence ~  mead_250 + Year + (1|Farm_ID/Plot_ID)",
-        has_specified_value="Aphid_incidence ~  mead_250 + Year + (1|Farm_ID/Plot_ID)"
-      )
-    )
-  ),
-  
-  # Output of summary function on lme (fixed effects)
-  has_output_dataset= tuple(sum1, 'Results of LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.'),
-  
-  # PNG output from ggplot - Git Repo is currently set to private.
-  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
-  
-  # Output statement if applicable.
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
-  from the best models without covariables and shading represents the associated 95% confidence intervals.",
-  
-  # Snippet is essentially a concise version of this script with redundant code removed.
-  # Git Repo is currently set to private.
-  has_implementation="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R"
+##################################
+######### Definitions ############
+##################################
+Meter <- tp$qudt_unit(label="m", qudtucumcode="m", same_as="http://qudt.org/vocab/unit/M")
+Radius <- tp$quantity_value(label="250 m radius", qudtnumericvalue= 250, qudtunit=Meter)
+Aphids <- tp$entity(label="Aphids", same_as="http://purl.obolibrary.org/obo/OMIT_0002433")
+Plot <- tp$entity(label="Agricultural experimental plot", same_as="http://purl.obolibrary.org/obo/AGRO_00000301")
+Incidence <- tp$property(label="Incidence", same_as="http://purl.obolibrary.org/obo/NCIT_C16726")
+Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108", is_constrained_by=Radius)
+Region <- tp$entity(label="Region", same_as="http://purl.obolibrary.org/obo/NCIT_C41129")
+Proportion <- tp$property(label="Proportion", same_as="http://purl.obolibrary.org/obo/NCIT_C49159")
+Year <- tp$entity(label="Year", same_as="http://purl.obolibrary.org/obo/NCIT_C29848")
+Farm <- tp$entity(label="Farm", same_as="http://purl.obolibrary.org/obo/NCIT_C48953")
+
+
+
+################################
+######## LMM Variables #########
+################################
+var_Aphid_incidence <- tp$variable(
+  label="Aphids incidence in an agricultural experimental plot",
+  has_object_of_interest_= Aphids,
+  has_matrix = Plot,
+  has_property = Incidence
+)
+
+var_mead_250 <- tp$variable(
+  label="Meadow proportion in a region with 250 m radius",
+  has_object_of_interest_= Meadow,
+  has_matrix = Region,
+  has_property = Proportion
+)
+
+var_Year <- tp$variable(
+  label="Year",
+  has_object_of_interest= Year,
+
+)
+
+var_Plot_Farm <- tp$variable(
+  label="Plot and farm",
+  has_object_of_interest_ = Plot,
+  has_matrix = Farm,
   
 )
+
+################################
+############# LMM  #############
+################################
+lmm1 <- tp$linear_mixed_model(
+  label="A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental 
+  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
+  has_response_variable = var_Aphid_incidence,
+  has_fixed_effect_term_i = var_mead_250,
+  has_fixed_effect_term_ii = var_Year,
+  has_random_effect_term_ = var_Plot_Farm,
+)
+
+
+################################
+########## Model fitting #######
+################################
+instance <- tp$linear_mixed_model_fitting(
+  has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R",
+  label="Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects..", 
+  has_input_dataset= tuple(inputDF, "Input data set label"),
+  has_input_model= lmm1,
+  has_output_dataset= tuple(sum1, "Results of LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+)
 instance$serialize_to_file("article.contribution.1.json", format="json-ld")
+#instance$pretty_print()
