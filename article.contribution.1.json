@@ -2059,17 +2059,29 @@
                   "@type": [
                     "https://incubating.orkg.org/class/C38008"
                   ],
-                  "P45075": [
+                  "P45076": [
                     {
                       "@id": "_:n23",
+                      "label": "m",
+                      "@type": [
+                        "https://incubating.orkg.org/class/C38009"
+                      ],
+                      "SAME_AS": [
+                        "http://qudt.org/vocab/unit/M"
+                      ],
+                      "P45081": [
+                        "m"
+                      ]
+                    }
+                  ],
+                  "P45075": [
+                    {
+                      "@id": "_:n24",
                       "label": "250",
                       "@type": [
                         "https://incubating.orkg.org/class/Decimal"
                       ]
                     }
-                  ],
-                  "P45076": [
-                    "@id": "https://incubating.orkg.org/resource/R172604"
                   ]
                 }
               ],
@@ -2095,7 +2107,7 @@
           ],
           "titles": "Value",
           "number": 1,
-          "@id": "_:n24"
+          "@id": "_:n25"
         },
         {
           "@type": [
@@ -2103,7 +2115,7 @@
           ],
           "titles": "Std.Error",
           "number": 2,
-          "@id": "_:n25"
+          "@id": "_:n26"
         },
         {
           "@type": [
@@ -2111,7 +2123,7 @@
           ],
           "titles": "DF",
           "number": 3,
-          "@id": "_:n26"
+          "@id": "_:n27"
         },
         {
           "@type": [
@@ -2119,7 +2131,7 @@
           ],
           "titles": "t-value",
           "number": 4,
-          "@id": "_:n27"
+          "@id": "_:n28"
         },
         {
           "@type": [
@@ -2127,7 +2139,7 @@
           ],
           "titles": "p-value",
           "number": 5,
-          "@id": "_:n28"
+          "@id": "_:n29"
         }
       ],
       "rows": [
@@ -2143,35 +2155,35 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.0449",
-              "column": "_:n24"
-            },
-            {
-              "@type": [
-                "https://incubating.orkg.org/class/Cell"
-              ],
-              "value": "0.0791",
               "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "21.0",
+              "value": "0.0791",
               "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "0.5668",
+              "value": "21.0",
               "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "0.5768",
+              "value": "0.5668",
               "column": "_:n28"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.5768",
+              "column": "_:n29"
             }
           ]
         },
@@ -2187,35 +2199,35 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.5791",
-              "column": "_:n24"
-            },
-            {
-              "@type": [
-                "https://incubating.orkg.org/class/Cell"
-              ],
-              "value": "0.1866",
               "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "21.0",
+              "value": "0.1866",
               "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "3.1029",
+              "value": "21.0",
               "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "0.0054",
+              "value": "3.1029",
               "column": "_:n28"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0054",
+              "column": "_:n29"
             }
           ]
         },
@@ -2231,40 +2243,40 @@
                 "https://incubating.orkg.org/class/Cell"
               ],
               "value": "0.3225",
-              "column": "_:n24"
-            },
-            {
-              "@type": [
-                "https://incubating.orkg.org/class/Cell"
-              ],
-              "value": "0.0582",
               "column": "_:n25"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "21.0",
+              "value": "0.0582",
               "column": "_:n26"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "5.5384",
+              "value": "21.0",
               "column": "_:n27"
             },
             {
               "@type": [
                 "https://incubating.orkg.org/class/Cell"
               ],
-              "value": "0.0",
+              "value": "5.5384",
               "column": "_:n28"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Cell"
+              ],
+              "value": "0.0",
+              "column": "_:n29"
             }
           ]
         }
       ],
-      "@id": "_:n29"
+      "@id": "_:n30"
     }
   ],
   "P72000": [
@@ -2280,6 +2292,7 @@
     "P69029": "https://incubating.orkg.org/property/P69029",
     "P69030": "https://incubating.orkg.org/property/P69030",
     "SAME_AS": "https://incubating.orkg.org/property/SAME_AS",
+    "P45081": "https://incubating.orkg.org/property/P45081",
     "P68000": "https://incubating.orkg.org/property/P68000",
     "P68001": "https://incubating.orkg.org/property/P68001",
     "P68002": "https://incubating.orkg.org/property/P68002",
