@@ -191,7 +191,7 @@ var_Plot_Farm <- tp$variable(
 ################################
 lmm1 <- tp$linear_mixed_model(
   label="A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental 
-  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
+  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
   has_response_variable = var_Aphid_incidence,
   has_fixed_effect_term_i = var_mead_250,
   has_fixed_effect_term_ii = var_Year,
@@ -204,7 +204,7 @@ lmm1 <- tp$linear_mixed_model(
 ################################
 instance <- tp$linear_mixed_model_fitting(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R",
-  label="Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects..", 
+  label="Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects.", 
   has_input_dataset= tuple(inputDF, "Input data set label"),
   has_input_model= lmm1,
   has_output_dataset= tuple(sum1, "Results of LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),

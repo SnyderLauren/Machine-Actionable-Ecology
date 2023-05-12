@@ -111,7 +111,7 @@ PredictedValuesLepidopteraIncidence
 ###End of script
 
 #Input data set
-inputDF <- LepidopteranIncidence[, c("Year", "Farm_ID", "Plot_ID", "Lepidoptera_incidence", "mead_250")]
+inputDF <- LepidopteranIncidence[, c("Year", "Farm_ID", "Plot_ID", "Lepidoptera_incidence", "mead_1000")]
 
 ####################################### 
 ############### ORKG ##################

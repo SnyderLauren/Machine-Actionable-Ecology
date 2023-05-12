@@ -1,6 +1,6 @@
 {
   "@id": "_:n1",
-  "label": "Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects..",
+  "label": "Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects.",
   "@type": [
     "https://incubating.orkg.org/class/C37001"
   ],
@@ -1911,7 +1911,7 @@
   "P68001": [
     {
       "@id": "_:n8",
-      "label": "A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental \n  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
+      "label": "A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental \n  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
       "@type": [
         "https://incubating.orkg.org/class/C37000"
       ],
