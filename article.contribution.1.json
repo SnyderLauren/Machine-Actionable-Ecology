@@ -4,6 +4,12 @@
   "@type": [
     "https://incubating.orkg.org/class/C38012"
   ],
+  "P78002": [
+    {}
+  ],
+  "P69029": [
+    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png"
+  ],
   "P77006": [
     {
       "@id": "_:n2",
@@ -2109,7 +2115,7 @@
               "@type": [
                 "https://incubating.orkg.org/class/Column"
               ],
-              "titles": "fitlme$coefficients$fixed",
+              "titles": "Value",
               "number": 1,
               "@id": "_:n26"
             }
@@ -2169,11 +2175,505 @@
       ]
     }
   ],
-  "P69029": [
-    "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png"
+  "P78000": [
+    {
+      "@id": "_:n28",
+      "label": "Significance testing to attain p-values for Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+      "@type": [
+        "https://incubating.orkg.org/class/C39000"
+      ],
+      "P68000": [
+        {
+          "label": "Fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.",
+          "@type": [
+            "https://incubating.orkg.org/class/Table"
+          ],
+          "columns": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "Value",
+              "number": 1,
+              "@id": "_:n29"
+            }
+          ],
+          "rows": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "(Intercept)",
+              "number": 1,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.04485561",
+                  "column": "_:n29"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "mead_250",
+              "number": 2,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5791057",
+                  "column": "_:n29"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "Year2015",
+              "number": 3,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.3224826",
+                  "column": "_:n29"
+                }
+              ]
+            }
+          ],
+          "@id": "_:n30"
+        }
+      ],
+      "P68002": [
+        {
+          "label": "Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effects",
+          "@type": [
+            "https://incubating.orkg.org/class/Table"
+          ],
+          "columns": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "Value",
+              "number": 1,
+              "@id": "_:n31"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "Std.Error",
+              "number": 2,
+              "@id": "_:n32"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "DF",
+              "number": 3,
+              "@id": "_:n33"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "t-value",
+              "number": 4,
+              "@id": "_:n34"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "p-value",
+              "number": 5,
+              "@id": "_:n35"
+            }
+          ],
+          "rows": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "(Intercept)",
+              "number": 1,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0449",
+                  "column": "_:n31"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0791",
+                  "column": "_:n32"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n33"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5668",
+                  "column": "_:n34"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5768",
+                  "column": "_:n35"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "mead_250",
+              "number": 2,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5791",
+                  "column": "_:n31"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.1866",
+                  "column": "_:n32"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n33"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "3.1029",
+                  "column": "_:n34"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0054",
+                  "column": "_:n35"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "Year2015",
+              "number": 3,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.3225",
+                  "column": "_:n31"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0582",
+                  "column": "_:n32"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n33"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "5.5384",
+                  "column": "_:n34"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0",
+                  "column": "_:n35"
+                }
+              ]
+            }
+          ],
+          "@id": "_:n36"
+        }
+      ]
+    }
   ],
   "P69030": [
     "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
+  ],
+  "P78001": [
+    {
+      "@id": "_:n37",
+      "label": "ANOVA to attain F-values for Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+      "@type": [
+        "https://incubating.orkg.org/class/C39001"
+      ],
+      "P68002": [
+        {
+          "label": "numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.",
+          "@type": [
+            "https://incubating.orkg.org/class/Table"
+          ],
+          "columns": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "numDF",
+              "number": 1,
+              "@id": "_:n38"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "denDF",
+              "number": 2,
+              "@id": "_:n39"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "F.value",
+              "number": 3,
+              "@id": "_:n40"
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "p.value",
+              "number": 4,
+              "@id": "_:n41"
+            }
+          ],
+          "rows": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "(Intercept)",
+              "number": 1,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "1.0",
+                  "column": "_:n38"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n39"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.3213",
+                  "column": "_:n40"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5768",
+                  "column": "_:n41"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "mead_250",
+              "number": 2,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "1.0",
+                  "column": "_:n38"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n39"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "9.6278",
+                  "column": "_:n40"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0054",
+                  "column": "_:n41"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "Year",
+              "number": 3,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "1.0",
+                  "column": "_:n38"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "21.0",
+                  "column": "_:n39"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "30.6737",
+                  "column": "_:n40"
+                },
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.0",
+                  "column": "_:n41"
+                }
+              ]
+            }
+          ],
+          "@id": "_:n42"
+        }
+      ],
+      "P68000": [
+        {
+          "label": "Fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.",
+          "@type": [
+            "https://incubating.orkg.org/class/Table"
+          ],
+          "columns": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Column"
+              ],
+              "titles": "Value",
+              "number": 1,
+              "@id": "_:n43"
+            }
+          ],
+          "rows": [
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "(Intercept)",
+              "number": 1,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.04485561",
+                  "column": "_:n43"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "mead_250",
+              "number": 2,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.5791057",
+                  "column": "_:n43"
+                }
+              ]
+            },
+            {
+              "@type": [
+                "https://incubating.orkg.org/class/Row"
+              ],
+              "titles": "Year2015",
+              "number": 3,
+              "cells": [
+                {
+                  "@type": [
+                    "https://incubating.orkg.org/class/Cell"
+                  ],
+                  "value": "0.3224826",
+                  "column": "_:n43"
+                }
+              ]
+            }
+          ],
+          "@id": "_:n44"
+        }
+      ]
+    }
   ],
   "@context": {
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
@@ -2181,7 +2681,10 @@
     "P6004": "https://incubating.orkg.org/property/P6004",
     "P69029": "https://incubating.orkg.org/property/P69029",
     "P77006": "https://incubating.orkg.org/property/P77006",
+    "P78000": "https://incubating.orkg.org/property/P78000",
+    "P78001": "https://incubating.orkg.org/property/P78001",
     "P69030": "https://incubating.orkg.org/property/P69030",
+    "P78002": "https://incubating.orkg.org/property/P78002",
     "SAME_AS": "https://incubating.orkg.org/property/SAME_AS",
     "P45081": "https://incubating.orkg.org/property/P45081",
     "P68000": "https://incubating.orkg.org/property/P68000",
