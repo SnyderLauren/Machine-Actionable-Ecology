@@ -6916,6 +6916,7 @@
     "rows": "https://incubating.orkg.org/property/CSVW_Rows",
     "cells": "https://incubating.orkg.org/property/CSVW_Cells",
     "value": "https://incubating.orkg.org/property/CSVW_Value",
-    "titles": "https://incubating.orkg.org/property/CSVW_Titles"
+    "titles": "https://incubating.orkg.org/property/CSVW_Titles",
+    "column": "https://incubating.orkg.org/property/CSVW_Column"
   }
 }
