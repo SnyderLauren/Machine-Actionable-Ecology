@@ -41,6 +41,8 @@ library (ggplot2)#ggplot2_3.3.6
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0
 library(orkg)
+library (ggpubr)#vesion 0.4.0
+library(dplyr)#version 1.08
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -61,11 +63,12 @@ PlantDamageIndex <-LandscapeData[!is.na(LandscapeData$Plant_damage), ]
 ####Lepidoptera incidence data - Figure 4c ##############
 
 fitlme.Li <- lme(sqrt(Lepidoptera_incidence)~  mead_1000+Year, data = LepidopteranIncidence, random=~1|Farm_ID/Plot_ID)
-
+LMMOutput <- data.frame(fitlme.Li$coefficients$fixed)
+colnames(LMMOutput)[1] <- 'Value'
 
 #First set of data to EXTRACT from anova. Here, we run an ANOVA (Type III sum of squares) and would like to capture: numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), the F-value (test statistic from the F test), and the associated p-value for all three rows - Intercept, Mead_1000 (proportion of meadows within a 1000 meter radius of the field plot) and Year (sampling year)
-anova(fitlme.Li,type='marginal')
-
+anovaOutput <- data.frame(anova(fitlme.Li,type='marginal'))
+anovaOutput
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
 sum1 <- data.frame(summary(fitlme.Li)$tTable, check.names=FALSE)
@@ -96,6 +99,39 @@ p1 <- ggplot(LepidopteranIncidence, aes(x = mead_1000, y = Lepidoptera_incidence
 
 p1
 ggsave("Fig.4c.png", plot = p1, scale=0.5)
+
+
+############Lepidoptera incidence- FIGURE 4c #############################
+#Figure 4c--Keeping the default settings in ggplot
+Lepidoptera_incidence.default<- ggplot(LandscapeData, aes(x=mead_1000, y=Lepidoptera_incidence, colour = Year)) +   geom_point(shape=1) + geom_smooth (aes (x=mead_1000, y=Lepidoptera_incidence, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE) + theme(panel.background = element_rect(fill='white', colour='black'))+scale_y_continuous(breaks=c(0,0.3, 0.9, 1.2))+xlab('Proportion of meadows at 1000-m')+ylab('Proportion of plants infested by Lepidoptera')
+Lepidoptera_incidence.default#we can ignore the warning. It is just telling us that there is missing data
+#Figure4c--Reproducing the plot theme selected in the paper (the way the plot looks like in the paper)
+Lepidoptera_incidence.papertheme<- ggplot(LandscapeData, aes(x=mead_1000, y=Lepidoptera_incidence, colour = Year, linetype = Year)) +  geom_point(aes(shape = factor(Year)), size = 2) + geom_smooth (aes (x=mead_1000, y=Lepidoptera_incidence, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE,show.legend = NA) +
+  scale_color_grey (start=0.7, end=0.2)+ scale_linetype_manual(values = c("dashed", "solid"))+ scale_shape_manual(name = "Year",values = c(16, 17))+theme(panel.background = element_rect(fill='white', colour='black'))+
+  theme(legend.position = "top")+xlab('Proportion of meadows at 1000-m')+ ylab('Proportion of plants infested by Lepidoptera')
+Lepidoptera_incidence.papertheme
+#add equation to the plot---
+Lepidoptera_incidence.papertheme+ stat_regline_equation()
+# Save ggplot figure as png
+ggsave("Fig.4c.2.png", plot = Lepidoptera_incidence.papertheme, scale=0.5)
+
+
+#not sure how to extract equation from the ggplot figure. Alternatively, we could run the individual models
+#first, we need to split the dataset per year
+Data2014<-filter (LandscapeData, Year=="2014")
+Data2015 <- filter(LandscapeData, Year=="2015")
+#now we can create individual models (lm)
+
+Lepidoptera_incidence2014 <-lm (Lepidoptera_incidence~mead_1000, data=Data2014 )
+sum2014 <- data.frame(summary(Lepidoptera_incidence2014)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope 
+rownames(sum2014) <- c("(Intercept)(2014)","mead_1000 (2014)")
+Lepidoptera_incidence2015 <-lm (Lepidoptera_incidence~mead_1000, data=Data2015 )
+sum2015 <- data.frame(summary(Lepidoptera_incidence2015)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope
+rownames(sum2015) <- c("(Intercept)(2015)","mead_1000 (2015)")
+sumLR <- rbind(sum2014,sum2015)
+#keep in mind that the model significance could be different from the significance
+#obtained from the linear mixed-effect models (lme)
+
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4c based on the model predictions.
 PredictedValuesLepidopteraIncidence <- newdat.lme.Li
@@ -133,8 +169,8 @@ Radius <- tp$quantity_value(label="250 m radius", qudtnumericvalue= 250, qudtuni
 Lepidoptera <- tp$entity(label="Lepidoptera", same_as="http://purl.obolibrary.org/obo/OMIT_0009010")
 Plot <- tp$entity(label="Agricultural experimental plot", same_as="http://purl.obolibrary.org/obo/AGRO_00000301")
 Incidence <- tp$property(label="Incidence", same_as="http://purl.obolibrary.org/obo/NCIT_C16726")
-Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108", is_constrained_by=Radius)
-Region <- tp$entity(label="Region", same_as="http://purl.obolibrary.org/obo/NCIT_C41129")
+Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108")
+Region <- tp$entity(label="Region", same_as="http://purl.obolibrary.org/obo/NCIT_C41129", is_constrained_by=Radius)
 Proportion <- tp$property(label="Proportion", same_as="http://purl.obolibrary.org/obo/NCIT_C49159")
 Year <- tp$entity(label="Year", same_as="http://purl.obolibrary.org/obo/NCIT_C29848")
 Farm <- tp$entity(label="Farm", same_as="http://purl.obolibrary.org/obo/NCIT_C48953")
@@ -172,9 +208,25 @@ var_Plot_Farm <- tp$variable(
 )
 
 ################################
+############# LR  #############
+################################
+lr <- tp$linear_regression(
+  label="A linear regression (LR) with lepidoptera incidence (Lepidoptera_incidence) as the dependent variable and the proportion of meadows within a 1000 meter radius of the experimental 
+  farm plot (mead_1000) as the independent variable, grouped by year (Year)",
+  has_input_dataset=tuple(inputDF, "Raw field data on lepidoptera incidence"),
+  has_dependent_variable = var_Lepidoptera_incidence,
+  has_independent_variable = var_mead_1000,
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.2.png",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_output_dataset = tuple(sumLR, "Results of LR with Lepidoptera_incidence as the dependent variable and mead_1000 as the independent variable")
+)
+
+
+################################
 ############# LMM  #############
 ################################
-lmm1 <- tp$linear_mixed_model(
+lmm <- tp$linear_mixed_model(
   label="A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental 
   farm plot (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
   has_response_variable = var_Lepidoptera_incidence,
@@ -185,17 +237,57 @@ lmm1 <- tp$linear_mixed_model(
 
 
 ################################
-########## Model fitting #######
+######### LMM Fitting  #########
 ################################
-instance <- tp$linear_mixed_model_fitting(
+lmmFitting <- tp$linear_mixed_model_fitting(
+  label="A linear mixed model (LMM) with lepidoptera incidence (Lepidoptera_incidence) as the response variable, study year (Year) and the proportion of meadows within a 1000 meter radius of the experimental 
+  farm plot (mead_1000) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
+  has_input_dataset= tuple(inputDF, "Raw field data on lepidoptera incidence"),
+  has_input_model=lmm,
+  has_output_dataset= tuple(LMMOutput, 'Results of LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects.'),
+)
+
+################################
+## LMM Significance Testing  ###
+################################
+LMMSignificanceTesting <- tp$lmm_significance_testing(
+  label="Significance testing to attain p-values for Intercept, mead_1000 (proportion of meadows within a 1000 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects."),
+  has_output_dataset= tuple(sum1, 'Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effects'),
+)
+
+
+################################
+############ Anova  ############
+################################
+ANOVA <- tp$anova(
+  label="ANOVA to attain F-values for Intercept, mead_1000 (proportion of meadows within a 1000 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects."),
+  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.'),
+)
+
+################################
+######## LMM Prediction  #######
+################################
+LMMPrediction <- tp$lmm_prediction(
+  label="Prediction using the fitted LMM with Lepidoptera_incidence as the response variable, and Year and mead_100 as fixed effects.",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects."),
+  has_output_dataset= tuple(PredictedValuesLepidopteraIncidence, 'Predicted results of the LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects.'),
+  has_output_figure = "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png",
+)
+
+
+################################
+#### LMM Planned Process #######
+################################
+instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R",
-  label="Lepidoptera incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 1000 meter radius as fixed effects.", 
-  has_input_dataset= tuple(inputDF, "Input data set label"),
-  has_input_model= lmm1,
-  has_output_dataset= tuple(sum1, 'Results of LMM with Lepidoptera_incidence as the response variable, and Year and mead_1000 as fixed effects.'),
-  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4c.png",
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (1000 m radius) and lepidoptera incidence. Lines are the fixed-effect predictions 
-  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  label="Lepidoptera_incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 1000 meter radius as fixed effects.", 
+  has_lmm_fitting= lmmFitting,
+  has_anova = ANOVA,
+  has_lmm_significance_testing = LMMSignificanceTesting,
+  has_lmm_prediction = LMMPrediction,
+  has_linear_regression= lr
 )
 instance$serialize_to_file("article.contribution.3.json", format="json-ld")
 #instance$pretty_print()
