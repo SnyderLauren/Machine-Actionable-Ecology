@@ -59,10 +59,12 @@ PlantDamageIndex <-LandscapeData[!is.na(LandscapeData$Plant_damage), ]
 
 ###### Flea beetle abundance Fig 4b###############
 fitlme.fb <- lme(FleaBeetles_abundance~  mead_250+Year, data = LandscapeData, random=~1|Farm_ID/Plot_ID)
+LMMOutput <- data.frame(fitlme.fb$coefficients$fixed)
+colnames(LMMOutput)[1] <- 'Value'
 
 #First set of data to EXTRACT from anova. Here, we run an ANOVA (Type III sum of squares) and would like to capture: numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), the F-value (test statistic from the F test), and the associated p-value for all three rows - Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)
-anova(fitlme.fb,type='marginal')
-
+anovaOutput <- data.frame(anova(fitlme.fb,type='marginal'))
+anovaOutput
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
 sum1 <- data.frame(summary(fitlme.fb)$tTable, check.names=FALSE)
@@ -95,6 +97,37 @@ p1 <- ggplot(LandscapeData, aes(x = mead_250, y = FleaBeetles_abundance, color =
 p1
 # Save ggplot figure as png
 ggsave("Fig.4b.png", plot = p1, scale=0.5)
+
+
+###########FIGURE 4b---Flea beetles abundance#############################
+#Figure 4b--Keeping the default settings in ggplot
+FleaBeetles_abundance.default<- ggplot(LandscapeData, aes(x=mead_250, y=FleaBeetles_abundance, colour = Year)) +   geom_point(shape=1) + geom_smooth (aes (x=mead_250, y=FleaBeetles_abundance, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE) + theme(panel.background = element_rect(fill='white', colour='black'))+scale_y_continuous(breaks=c(0,5, 10, 15))+xlab('Proportion of meadows at 250-m')+ylab('Mean flea beetle abundance/trap')
+FleaBeetles_abundance.default#we can ignore the warning. It is just telling us that there is missing data
+#Figure4b--Reproducing the plot theme selected in the paper (the way the plot looks like in the paper)
+FleaBeetles_abundance.papertheme<- ggplot(LandscapeData, aes(x=mead_250, y=FleaBeetles_abundance, colour = Year, linetype = Year)) +  geom_point(aes(shape = factor(Year)), size = 2) + geom_smooth (aes (x=mead_250, y=FleaBeetles_abundance, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE,show.legend = NA) +
+  scale_color_grey (start=0.7, end=0.2)+ scale_linetype_manual(values = c("dashed", "solid"))+ scale_shape_manual(name = "Year",values = c(16, 17))+theme(panel.background = element_rect(fill='white', colour='black'))+
+  theme(legend.position = "top")+xlab('Proportion of meadows at 250-m')+ ylab('Mean flea beetle abundance/trap')
+FleaBeetles_abundance.papertheme
+#add equation to the plot---
+FleaBeetles_abundance.papertheme+ stat_regline_equation()
+# Save ggplot figure as png
+ggsave("Fig.4b.2.png", plot = FleaBeetles_abundance.papertheme, scale=0.5)
+
+#not sure how to extract equation from the ggplot figure. Alternatively, we could run the individual models
+#first, we need to split the dataset per year
+Data2014<-filter (LandscapeData, Year=="2014")
+Data2015 <- filter(LandscapeData, Year=="2015")
+#now we can create individual models (lm)
+
+FleaBeetles_abundance2014 <-lm (FleaBeetles_abundance~mead_1000, data=Data2014 )
+sum2014 <- data.frame(summary(FleaBeetles_abundance2014)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope 
+rownames(sum2014) <- c("(Intercept)(2014)","mead_1000 (2014)")
+FleaBeetles_abundance2015 <-lm (FleaBeetles_abundance~mead_1000, data=Data2015 )
+sum2015 <- data.frame(summary(FleaBeetles_abundance2015)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope
+rownames(sum2015) <- c("(Intercept)(2015)","mead_1000 (2015)")
+sumLR <- rbind(sum2014,sum2015)
+#keep in mind that the model significance could be different from the significance
+#obtained from the linear mixed-effect models (lme)
 
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4b based on the model predictions.
 PredictedValuesFleaBeetlesAbundance <- newdat.lme.fb
@@ -171,10 +204,27 @@ var_Plot_Farm <- tp$variable(
   
 )
 
+
+################################
+############# LR  #############
+################################
+lr <- tp$linear_regression(
+  label="A linear regression (LR) with  flea beetle abundance (FleaBeetles_abundance) as the dependent variable and the proportion of meadows within a 250 meter radius of the experimental 
+  farm plot (mead_250) as the independent variable, grouped by year (Year)",
+  has_input_dataset=tuple(inputDF, "Raw field data on flea beetle abundance"),
+  has_dependent_variable = var_FleaBeetles_abundance,
+  has_independent_variable = var_mead_250,
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4b.2.png",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and  flea beetle abundance. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_output_dataset = tuple(sumLR, "Results of LR with FleaBeetles_abundance as the dependent variable and mead_250 as the independent variable")
+)
+
+
 ################################
 ############# LMM  #############
 ################################
-lmm1 <- tp$linear_mixed_model(
+lmm <- tp$linear_mixed_model(
   label="A linear mixed model (LMM) with flea beetle abundance (FleaBeetles_abundance) as the response variable, study year (Year) and
   the proportion of meadows within a 250 meter radius of the experimental farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
   has_response_variable = var_FleaBeetles_abundance,
@@ -183,19 +233,56 @@ lmm1 <- tp$linear_mixed_model(
   has_random_effect_term_ = var_Plot_Farm,
 )
 
+################################
+######### LMM Fitting  #########
+################################
+lmmFitting <- tp$linear_mixed_model_fitting(
+  label="A linear mixed model (LMM) with flea beetle abundance (FleaBeetles_abundance) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental 
+  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
+  has_input_dataset= tuple(inputDF, "Raw field data on flea beetle abundance"),
+  has_input_model=lmm,
+  has_output_dataset= tuple(LMMOutput, 'Results of LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects.'),
+)
 
 ################################
-########## Model fitting #######
+## LMM Significance Testing  ###
 ################################
-instance <- tp$linear_mixed_model_fitting(
+LMMSignificanceTesting <- tp$lmm_significance_testing(
+  label="Significance testing to attain p-values for Intercept, mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(sum1, 'Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effects'),
+)
+
+################################
+############ Anova  ############
+################################
+ANOVA <- tp$anova(
+  label="ANOVA to attain F-values for Intercept, mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.'),
+)
+
+################################
+######## LMM Prediction  #######
+################################
+LMMPrediction <- tp$lmm_prediction(
+  label="Prediction using the fitted LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects.",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(PredictedValuesFleaBeetlesAbundance, 'Predicted results of the LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects.'),
+  has_output_figure = "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4b.png",
+)
+
+################################
+#### LMM Planned Process #######
+################################
+instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4b.snippet.R",
   label="Flea beetle abundance in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects.", 
-  has_input_dataset= tuple(inputDF, "Input data set label"),
-  has_input_model= lmm1,
-  has_output_dataset= tuple(sum1, 'Results of LMM with FleaBeetles_abundance as the response variable, and Year and mead_250 as fixed effects.'),
-  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4b.png",
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and flea beetle abundance. Lines are the fixed-effect predictions 
-  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_lmm_fitting= lmmFitting,
+  has_anova = ANOVA,
+  has_lmm_significance_testing = LMMSignificanceTesting,
+  has_lmm_prediction = LMMPrediction,
+  has_linear_regression= lr
 )
 instance$serialize_to_file("article.contribution.2.json", format="json-ld")
 #instance$pretty_print()

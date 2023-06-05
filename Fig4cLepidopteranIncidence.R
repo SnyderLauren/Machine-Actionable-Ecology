@@ -282,7 +282,7 @@ LMMPrediction <- tp$lmm_prediction(
 ################################
 instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4c.snippet.R",
-  label="Lepidoptera_incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 1000 meter radius as fixed effects.", 
+  label="Lepidoptera incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 1000 meter radius as fixed effects.", 
   has_lmm_fitting= lmmFitting,
   has_anova = ANOVA,
   has_lmm_significance_testing = LMMSignificanceTesting,
