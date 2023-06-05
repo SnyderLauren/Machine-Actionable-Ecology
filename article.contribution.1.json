@@ -264,7 +264,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -278,7 +278,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "1.0",
+                  "value": "1",
                   "column": "_:n10"
                 },
                 {
@@ -308,7 +308,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -322,7 +322,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2.0",
+                  "value": "2",
                   "column": "_:n10"
                 },
                 {
@@ -352,7 +352,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -366,7 +366,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "3.0",
+                  "value": "3",
                   "column": "_:n10"
                 },
                 {
@@ -396,7 +396,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -410,7 +410,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "4.0",
+                  "value": "4",
                   "column": "_:n10"
                 },
                 {
@@ -440,7 +440,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -454,7 +454,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "5.0",
+                  "value": "5",
                   "column": "_:n10"
                 },
                 {
@@ -484,7 +484,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -498,7 +498,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "6.0",
+                  "value": "6",
                   "column": "_:n10"
                 },
                 {
@@ -528,7 +528,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -542,7 +542,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "8.0",
+                  "value": "8",
                   "column": "_:n10"
                 },
                 {
@@ -572,7 +572,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -586,7 +586,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "9.0",
+                  "value": "9",
                   "column": "_:n10"
                 },
                 {
@@ -616,7 +616,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -630,7 +630,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "10.0",
+                  "value": "10",
                   "column": "_:n10"
                 },
                 {
@@ -660,7 +660,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -674,7 +674,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "11.0",
+                  "value": "11",
                   "column": "_:n10"
                 },
                 {
@@ -704,7 +704,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -718,7 +718,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "12.0",
+                  "value": "12",
                   "column": "_:n10"
                 },
                 {
@@ -748,7 +748,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -762,7 +762,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "13.0",
+                  "value": "13",
                   "column": "_:n10"
                 },
                 {
@@ -792,7 +792,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -806,7 +806,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "14.0",
+                  "value": "14",
                   "column": "_:n10"
                 },
                 {
@@ -836,7 +836,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -850,7 +850,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "15.0",
+                  "value": "15",
                   "column": "_:n10"
                 },
                 {
@@ -880,7 +880,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -894,7 +894,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "16.0",
+                  "value": "16",
                   "column": "_:n10"
                 },
                 {
@@ -924,7 +924,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -938,7 +938,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "17.0",
+                  "value": "17",
                   "column": "_:n10"
                 },
                 {
@@ -968,7 +968,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -982,7 +982,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "19.0",
+                  "value": "19",
                   "column": "_:n10"
                 },
                 {
@@ -1012,7 +1012,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -1026,7 +1026,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "20.0",
+                  "value": "20",
                   "column": "_:n10"
                 },
                 {
@@ -1056,7 +1056,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -1070,7 +1070,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n10"
                 },
                 {
@@ -1100,7 +1100,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n8"
                 },
                 {
@@ -1114,7 +1114,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "22.0",
+                  "value": "22",
                   "column": "_:n10"
                 },
                 {
@@ -1144,7 +1144,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1158,7 +1158,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "23.0",
+                  "value": "23",
                   "column": "_:n10"
                 },
                 {
@@ -1188,7 +1188,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1202,7 +1202,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "24.0",
+                  "value": "24",
                   "column": "_:n10"
                 },
                 {
@@ -1232,7 +1232,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1246,14 +1246,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "25.0",
+                  "value": "25",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1276,7 +1276,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1290,14 +1290,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "26.0",
+                  "value": "26",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1320,7 +1320,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1334,7 +1334,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "27.0",
+                  "value": "27",
                   "column": "_:n10"
                 },
                 {
@@ -1364,7 +1364,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1378,7 +1378,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "28.0",
+                  "value": "28",
                   "column": "_:n10"
                 },
                 {
@@ -1408,7 +1408,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1422,14 +1422,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "29.0",
+                  "value": "29",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1452,7 +1452,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1466,14 +1466,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "30.0",
+                  "value": "30",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1496,7 +1496,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1510,14 +1510,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "31.0",
+                  "value": "31",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1540,7 +1540,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1554,14 +1554,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "32.0",
+                  "value": "32",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1584,7 +1584,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1598,7 +1598,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "33.0",
+                  "value": "33",
                   "column": "_:n10"
                 },
                 {
@@ -1628,7 +1628,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1642,7 +1642,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "34.0",
+                  "value": "34",
                   "column": "_:n10"
                 },
                 {
@@ -1672,7 +1672,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1686,7 +1686,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "35.0",
+                  "value": "35",
                   "column": "_:n10"
                 },
                 {
@@ -1716,7 +1716,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1730,14 +1730,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "36.0",
+                  "value": "36",
                   "column": "_:n10"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n11"
                 },
                 {
@@ -1760,7 +1760,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1774,7 +1774,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "37.0",
+                  "value": "37",
                   "column": "_:n10"
                 },
                 {
@@ -1804,7 +1804,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1818,7 +1818,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "38.0",
+                  "value": "38",
                   "column": "_:n10"
                 },
                 {
@@ -1848,7 +1848,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1862,7 +1862,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "39.0",
+                  "value": "39",
                   "column": "_:n10"
                 },
                 {
@@ -1892,7 +1892,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1906,7 +1906,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "40.0",
+                  "value": "40",
                   "column": "_:n10"
                 },
                 {
@@ -1936,7 +1936,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1950,7 +1950,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "41.0",
+                  "value": "41",
                   "column": "_:n10"
                 },
                 {
@@ -1980,7 +1980,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -1994,7 +1994,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "42.0",
+                  "value": "42",
                   "column": "_:n10"
                 },
                 {
@@ -2024,7 +2024,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -2038,7 +2038,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "43.0",
+                  "value": "43",
                   "column": "_:n10"
                 },
                 {
@@ -2068,7 +2068,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n8"
                 },
                 {
@@ -2082,7 +2082,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "44.0",
+                  "value": "44",
                   "column": "_:n10"
                 },
                 {
@@ -2303,7 +2303,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2347,7 +2347,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2391,7 +2391,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2435,7 +2435,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2479,7 +2479,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2523,7 +2523,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2567,7 +2567,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2611,7 +2611,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2655,7 +2655,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2699,7 +2699,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2743,7 +2743,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2787,7 +2787,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2831,7 +2831,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2875,7 +2875,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2919,7 +2919,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -2963,7 +2963,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -3007,7 +3007,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -3051,7 +3051,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -3095,7 +3095,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -3139,7 +3139,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n26"
                 },
                 {
@@ -3183,7 +3183,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3227,7 +3227,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3271,7 +3271,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3315,7 +3315,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3359,7 +3359,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3403,7 +3403,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3447,7 +3447,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3491,7 +3491,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3535,7 +3535,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3579,7 +3579,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3623,7 +3623,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3667,7 +3667,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3711,7 +3711,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3755,7 +3755,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3799,7 +3799,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3843,7 +3843,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3887,7 +3887,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3931,7 +3931,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -3975,7 +3975,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -4019,7 +4019,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -4063,7 +4063,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -4107,7 +4107,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n26"
                 },
                 {
@@ -4277,14 +4277,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "1.0",
+                  "value": "1",
                   "column": "_:n35"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n36"
                 },
                 {
@@ -4314,14 +4314,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "1.0",
+                  "value": "1",
                   "column": "_:n35"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n36"
                 },
                 {
@@ -4351,14 +4351,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "1.0",
+                  "value": "1",
                   "column": "_:n35"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n36"
                 },
                 {
@@ -4372,7 +4372,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n38"
                 }
               ]
@@ -4602,7 +4602,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n47"
                 },
                 {
@@ -4646,7 +4646,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n47"
                 },
                 {
@@ -4690,7 +4690,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n47"
                 },
                 {
@@ -4704,7 +4704,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n49"
                 }
               ]
@@ -5037,7 +5037,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5051,7 +5051,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "1.0",
+                  "value": "1",
                   "column": "_:n73"
                 },
                 {
@@ -5081,7 +5081,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5095,7 +5095,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2.0",
+                  "value": "2",
                   "column": "_:n73"
                 },
                 {
@@ -5125,7 +5125,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5139,7 +5139,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "3.0",
+                  "value": "3",
                   "column": "_:n73"
                 },
                 {
@@ -5169,7 +5169,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5183,7 +5183,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "4.0",
+                  "value": "4",
                   "column": "_:n73"
                 },
                 {
@@ -5213,7 +5213,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5227,7 +5227,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "5.0",
+                  "value": "5",
                   "column": "_:n73"
                 },
                 {
@@ -5257,7 +5257,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5271,7 +5271,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "6.0",
+                  "value": "6",
                   "column": "_:n73"
                 },
                 {
@@ -5301,7 +5301,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5315,7 +5315,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "8.0",
+                  "value": "8",
                   "column": "_:n73"
                 },
                 {
@@ -5345,7 +5345,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5359,7 +5359,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "9.0",
+                  "value": "9",
                   "column": "_:n73"
                 },
                 {
@@ -5389,7 +5389,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5403,7 +5403,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "10.0",
+                  "value": "10",
                   "column": "_:n73"
                 },
                 {
@@ -5433,7 +5433,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5447,7 +5447,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "11.0",
+                  "value": "11",
                   "column": "_:n73"
                 },
                 {
@@ -5477,7 +5477,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5491,7 +5491,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "12.0",
+                  "value": "12",
                   "column": "_:n73"
                 },
                 {
@@ -5521,7 +5521,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5535,7 +5535,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "13.0",
+                  "value": "13",
                   "column": "_:n73"
                 },
                 {
@@ -5565,7 +5565,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5579,7 +5579,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "14.0",
+                  "value": "14",
                   "column": "_:n73"
                 },
                 {
@@ -5609,7 +5609,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5623,7 +5623,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "15.0",
+                  "value": "15",
                   "column": "_:n73"
                 },
                 {
@@ -5653,7 +5653,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5667,7 +5667,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "16.0",
+                  "value": "16",
                   "column": "_:n73"
                 },
                 {
@@ -5697,7 +5697,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5711,7 +5711,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "17.0",
+                  "value": "17",
                   "column": "_:n73"
                 },
                 {
@@ -5741,7 +5741,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5755,7 +5755,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "19.0",
+                  "value": "19",
                   "column": "_:n73"
                 },
                 {
@@ -5785,7 +5785,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5799,7 +5799,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "20.0",
+                  "value": "20",
                   "column": "_:n73"
                 },
                 {
@@ -5829,7 +5829,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5843,7 +5843,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "21.0",
+                  "value": "21",
                   "column": "_:n73"
                 },
                 {
@@ -5873,7 +5873,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2015.0",
+                  "value": "2015",
                   "column": "_:n71"
                 },
                 {
@@ -5887,7 +5887,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "22.0",
+                  "value": "22",
                   "column": "_:n73"
                 },
                 {
@@ -5917,7 +5917,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -5931,7 +5931,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "23.0",
+                  "value": "23",
                   "column": "_:n73"
                 },
                 {
@@ -5961,7 +5961,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -5975,7 +5975,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "24.0",
+                  "value": "24",
                   "column": "_:n73"
                 },
                 {
@@ -6005,7 +6005,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6019,14 +6019,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "25.0",
+                  "value": "25",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6049,7 +6049,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6063,14 +6063,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "26.0",
+                  "value": "26",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6093,7 +6093,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6107,7 +6107,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "27.0",
+                  "value": "27",
                   "column": "_:n73"
                 },
                 {
@@ -6137,7 +6137,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6151,7 +6151,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "28.0",
+                  "value": "28",
                   "column": "_:n73"
                 },
                 {
@@ -6181,7 +6181,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6195,14 +6195,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "29.0",
+                  "value": "29",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6225,7 +6225,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6239,14 +6239,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "30.0",
+                  "value": "30",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6269,7 +6269,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6283,14 +6283,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "31.0",
+                  "value": "31",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6313,7 +6313,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6327,14 +6327,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "32.0",
+                  "value": "32",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6357,7 +6357,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6371,7 +6371,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "33.0",
+                  "value": "33",
                   "column": "_:n73"
                 },
                 {
@@ -6401,7 +6401,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6415,7 +6415,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "34.0",
+                  "value": "34",
                   "column": "_:n73"
                 },
                 {
@@ -6445,7 +6445,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6459,7 +6459,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "35.0",
+                  "value": "35",
                   "column": "_:n73"
                 },
                 {
@@ -6489,7 +6489,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6503,14 +6503,14 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "36.0",
+                  "value": "36",
                   "column": "_:n73"
                 },
                 {
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "0.0",
+                  "value": "0",
                   "column": "_:n74"
                 },
                 {
@@ -6533,7 +6533,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6547,7 +6547,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "37.0",
+                  "value": "37",
                   "column": "_:n73"
                 },
                 {
@@ -6577,7 +6577,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6591,7 +6591,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "38.0",
+                  "value": "38",
                   "column": "_:n73"
                 },
                 {
@@ -6621,7 +6621,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6635,7 +6635,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "39.0",
+                  "value": "39",
                   "column": "_:n73"
                 },
                 {
@@ -6665,7 +6665,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6679,7 +6679,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "40.0",
+                  "value": "40",
                   "column": "_:n73"
                 },
                 {
@@ -6709,7 +6709,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6723,7 +6723,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "41.0",
+                  "value": "41",
                   "column": "_:n73"
                 },
                 {
@@ -6753,7 +6753,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6767,7 +6767,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "42.0",
+                  "value": "42",
                   "column": "_:n73"
                 },
                 {
@@ -6797,7 +6797,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6811,7 +6811,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "43.0",
+                  "value": "43",
                   "column": "_:n73"
                 },
                 {
@@ -6841,7 +6841,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "2014.0",
+                  "value": "2014",
                   "column": "_:n71"
                 },
                 {
@@ -6855,7 +6855,7 @@
                   "@type": [
                     "https://incubating.orkg.org/class/Cell"
                   ],
-                  "value": "44.0",
+                  "value": "44",
                   "column": "_:n73"
                 },
                 {

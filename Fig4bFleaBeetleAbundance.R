@@ -41,6 +41,8 @@ library (ggplot2)#ggplot2_3.3.6
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0  
 library(orkg)
+library (ggpubr)#vesion 0.4.0
+library(dplyr)#version 1.08
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -152,7 +154,7 @@ inputDF <- FleaBeetlesAbundance[, c("Year", "Farm_ID", "Plot_ID", "FleaBeetles_a
 
 orkg <- ORKG(host="https://incubating.orkg.org")
 # Template 'Model Fitting 3'
-orkg$templates$materialize_template(template_id = "R488000")
+orkg$templates$materialize_template(template_id = "R492225")
 tp = orkg$templates$list_templates()
 keys(tp)
 tp$linear_mixed_model_fitting(text= 'doc')

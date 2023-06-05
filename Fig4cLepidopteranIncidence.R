@@ -155,7 +155,7 @@ inputDF <- LepidopteranIncidence[, c("Year", "Farm_ID", "Plot_ID", "Lepidoptera_
 
 orkg <- ORKG(host="https://incubating.orkg.org")
 # Template 'Model Fitting 3'
-orkg$templates$materialize_template(template_id = "R488000")
+orkg$templates$materialize_template(template_id = "R492225")
 tp = orkg$templates$list_templates()
 keys(tp)
 tp$linear_mixed_model_fitting(text= 'doc')
