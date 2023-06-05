@@ -41,6 +41,8 @@ library (ggplot2)#ggplot2_3.3.6
 library (visreg)#visreg_2.7.0 
 library(effects)#effects_4.2-0  
 library(orkg)
+library (ggpubr)#vesion 0.4.0
+library(dplyr)#version 1.08
 
 ######## REMOVING MISSING VALUES ########
 #Removing the rows with missing data from each variable individually (this way we don't delete more data than we need to)
@@ -62,11 +64,12 @@ PlantDamageIndex <-LandscapeData[!is.na(LandscapeData$Plant_damage), ]
 
 #The first step is to fit a simplified mixed-effect model (nlme)
 fitlme <- lme(sqrt(Aphid_incidence)~  mead_250+Year, data = AphidsIncidence, random=~1|Farm_ID/Plot_ID)
-
+LMMOutput <- data.frame(fitlme$coefficients$fixed)
+colnames(LMMOutput)[1] <- 'Value'
 
 #First set of data to EXTRACT from anova. Here, we run an ANOVA (Type III sum of squares) and would like to capture: numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), the F-value (test statistic from the F test), and the associated p-value for all three rows - Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)
-anova (fitlme,type='marginal')
-
+anovaOutput <- data.frame(anova(fitlme,type='marginal'))
+anovaOutput
 
 #Second set of data to EXTRACT from summary output. Here we would like to extract the information associated with the fixed effects: Value (slope estimates), Std.Error (approximate standard error of the slope estimates), DF (denominator degrees of freedom), t- value (ratios between slope estimates and their standard errors), p-value (associated p-value from a t-distribution)
 sum1 <- data.frame(summary(fitlme)$tTable, check.names=FALSE)
@@ -110,6 +113,43 @@ p1
 # Save ggplot figure as png
 ggsave("Fig.4a.png", plot = p1, scale=0.5)
 
+# Remove line 17 to replicate Fig. 4a
+LandscapeData <- LandscapeData[-17,]
+###########APHID incidence--FIGURE 4a########################
+#Figure 4a--Keeping the default settings in ggplot
+PlotAphidsIncidence.default<- ggplot(LandscapeData, aes(x=mead_250, y=Aphid_incidence, colour = Year)) +   geom_point(shape=1) + geom_smooth (aes (x=mead_250, y=Aphid_incidence, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE) + theme(panel.background = element_rect(fill='white', colour='black'))+scale_y_continuous(breaks=c(0,0.3, 0.6, 0.9))+xlab('Proportion of meadows at 250-m')+ylab('Proportion of plants infested by aphids')
+PlotAphidsIncidence.default#we can ignore the warning. It is just telling us that there is missing data
+#Figure4a--Reproducing the plot theme selected in the paper (the way the plot looks like in the paper)
+PlotAphidsIncidence.papertheme<- ggplot(LandscapeData, aes(x=mead_250, y=Aphid_incidence, colour = Year, linetype = Year)) +  geom_point(aes(shape = factor(Year)), size = 2) + geom_smooth (aes (x=mead_250, y=Aphid_incidence, colour=factor(Year)), method=lm, se=TRUE, fullrange=TRUE,show.legend = NA) + 
+  scale_color_grey (start=0.7, end=0.2)+ scale_linetype_manual(values = c("dashed", "solid"))+ scale_shape_manual(name = "Year",values = c(16, 17))+theme(panel.background = element_rect(fill='white', colour='black'))+
+  theme(legend.position = "top")+xlab('Proportion of meadows at 250-m')+ ylab('Proportion of plants infested by aphids')
+PlotAphidsIncidence.papertheme
+#add equation to the plot---legend location need to be adjusted 
+PlotAphidsIncidence.papertheme+ stat_regline_equation()
+
+# Save ggplot figure as png
+ggsave("Fig.4a.2.png", plot = PlotAphidsIncidence.papertheme, scale=0.5)
+
+
+#not sure how to extract equation from the ggplot figure. Alternatively, we could run the individual models (lm) 
+#First, we need to split the dataset per year
+Data2014<-filter (LandscapeData, Year=="2014")
+Data2015 <- filter(LandscapeData, Year=="2015")
+#now we can create individual models (lm)
+
+
+
+
+AphidsIncidence2014 <-lm (Aphid_incidence~mead_250, data=Data2014 )
+sum2014 <- data.frame(summary(AphidsIncidence2014)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope 
+rownames(sum2014) <- c("(Intercept)(2014)","mead_250 (2014)")
+AphidsIncidence2015 <-lm (Aphid_incidence~mead_250, data=Data2015 )
+sum2015 <- data.frame(summary(AphidsIncidence2015)$coefficients, check.names=FALSE) #the estimate of mead_250 represents the slope
+rownames(sum2015) <- c("(Intercept)(2015)","mead_250 (2015)")
+sumLR <- rbind(sum2014,sum2015)
+#keep in mind that the model significance could be different from the significance
+#obtained from the linear mixed-effect models (lme)
+
 #Third set of data to EXTRACT. This would allow someone to recreate FIG. 4a based on the model predictions.
 PredictedValuesAphid_incidence <- newdat.lme
 
@@ -133,32 +173,32 @@ inputDF <- AphidsIncidence[, c("Year", "Farm_ID", "Plot_ID", "Aphid_incidence", 
 ####################################### 
 
 orkg <- ORKG(host="https://incubating.orkg.org")
-# Template 'Model Fitting 3'
-orkg$templates$materialize_template(template_id = "R488000")
+# Template 'LMM Planned Process('
+orkg$templates$materialize_template(template_id = "R492225")
 tp = orkg$templates$list_templates()
 keys(tp)
+tp$lmm_planned_process(text= 'doc')
 tp$linear_mixed_model_fitting(text= 'doc')
-tp$linear_mixed_model(text= 'doc')
 
 ##################################
 ######### Definitions ############
 ##################################
+
 Meter <- tp$qudt_unit(label="m", qudtucumcode="m", same_as="http://qudt.org/vocab/unit/M")
 Radius <- tp$quantity_value(label="250 m radius", qudtnumericvalue= 250, qudtunit=Meter)
 Aphids <- tp$entity(label="Aphids", same_as="http://purl.obolibrary.org/obo/OMIT_0002433")
 Plot <- tp$entity(label="Agricultural experimental plot", same_as="http://purl.obolibrary.org/obo/AGRO_00000301")
 Incidence <- tp$property(label="Incidence", same_as="http://purl.obolibrary.org/obo/NCIT_C16726")
-Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108", is_constrained_by=Radius)
-Region <- tp$entity(label="Region", same_as="http://purl.obolibrary.org/obo/NCIT_C41129")
+Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108")
+Region <- tp$entity(label="Region", same_as="http://purl.obolibrary.org/obo/NCIT_C41129", is_constrained_by=Radius)
 Proportion <- tp$property(label="Proportion", same_as="http://purl.obolibrary.org/obo/NCIT_C49159")
 Year <- tp$entity(label="Year", same_as="http://purl.obolibrary.org/obo/NCIT_C29848")
 Farm <- tp$entity(label="Farm", same_as="http://purl.obolibrary.org/obo/NCIT_C48953")
 
-
-
 ################################
 ######## LMM Variables #########
 ################################
+
 var_Aphid_incidence <- tp$variable(
   label="Aphids incidence in an agricultural experimental plot",
   has_object_of_interest_= Aphids,
@@ -185,11 +225,25 @@ var_Plot_Farm <- tp$variable(
   has_matrix = Farm,
   
 )
+################################
+############# LR  #############
+################################
+lr <- tp$linear_regression(
+  label="A linear regression (LR) with aphid incidence (Aphid_incidence) as the dependent variable and the proportion of meadows within a 250 meter radius of the experimental 
+  farm plot (mead_250) as the independent variable, grouped by year (Year)",
+  has_input_dataset=tuple(inputDF, "Raw field data on aphid incidence"),
+  has_dependent_variable = var_Aphid_incidence,
+  has_independent_variable = var_mead_250,
+  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.2.png",
+  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
+  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_output_dataset = tuple(sumLR, "Results of LR with Aphid_incidence as the dependent variable and mead_250 as the independent variable")
+)
 
 ################################
 ############# LMM  #############
 ################################
-lmm1 <- tp$linear_mixed_model(
+lmm <- tp$linear_mixed_model(
   label="A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental 
   farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
   has_response_variable = var_Aphid_incidence,
@@ -198,19 +252,64 @@ lmm1 <- tp$linear_mixed_model(
   has_random_effect_term_ = var_Plot_Farm,
 )
 
+################################
+######### LMM Fitting  #########
+################################
+
+lmmFitting <- tp$linear_mixed_model_fitting(
+  label="A linear mixed model (LMM) with aphid incidence (Aphid_incidence) as the response variable, study year (Year) and the proportion of meadows within a 250 meter radius of the experimental 
+  farm plot (mead_250) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
+  has_input_dataset= tuple(inputDF, "Raw field data on aphid incidence"),
+  has_input_model=lmm,
+  has_output_dataset= tuple(LMMOutput, 'Results of LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.'),
+)
+
 
 ################################
-########## Model fitting #######
+## LMM Significance Testing  ###
 ################################
-instance <- tp$linear_mixed_model_fitting(
+
+LMMSignificanceTesting <- tp$lmm_significance_testing(
+  label="Significance testing to attain p-values for Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(sum1, 'Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effects'),
+)
+
+################################
+############ Anova  ############
+################################
+
+ANOVA <- tp$anova(
+  label="ANOVA to attain F-values for Intercept, Mead_250 (proportion of meadows within a 250 meter radius of the field plot) and Year (sampling year)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.'),
+)
+
+################################
+######## LMM Prediction  #######
+################################
+
+LMMPrediction <- tp$lmm_prediction(
+  label="Prediction using the fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),
+  has_output_dataset= tuple(PredictedValuesAphid_incidence, 'Predicted results of the LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects.'),
+  has_output_figure = "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
+)
+
+################################
+#### LMM Planned Process #######
+################################
+instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4a.snippet.R",
   label="Aphid incidence in experimental farm plots evaluated by a LMM with study year and the proportion of meadows within a 250 meter radius as fixed effects.", 
-  has_input_dataset= tuple(inputDF, "Input data set label"),
-  has_input_model= lmm1,
-  has_output_dataset= tuple(sum1, "Results of LMM with Aphid_incidence as the response variable, and Year and mead_250 as fixed effects."),
-  has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.png",
-  has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
-  from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_lmm_fitting= lmmFitting,
+  has_anova = ANOVA,
+  has_lmm_significance_testing = LMMSignificanceTesting,
+  has_lmm_prediction = LMMPrediction,
+  # has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4a.2.png",
+  # has_output_statement= "Relationship between the proportion of meadows around the experimental fields (250 m radius) and aphid incidence. Lines are the fixed-effect predictions 
+  # from the best models without covariables and shading represents the associated 95% confidence intervals.",
+  has_linear_regression= lr
 )
 instance$serialize_to_file("article.contribution.1.json", format="json-ld")
 #instance$pretty_print()

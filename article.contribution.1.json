@@ -206,7 +206,7 @@
       ],
       "P68000": [
         {
-          "label": "Input data set label",
+          "label": "Raw field data on aphid incidence",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -4979,7 +4979,7 @@
       ],
       "P68000": [
         {
-          "label": "Input data set label",
+          "label": "Raw field data on aphid incidence",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
