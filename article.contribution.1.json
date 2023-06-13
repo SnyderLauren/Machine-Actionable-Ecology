@@ -1,0 +1,352 @@
+{
+    "@id": "_:n1",
+    "label": "Testing Table Output",
+    "@type": [
+        "https://incubating.orkg.org/class/C45000"
+    ],
+    "P68000": [
+        {
+            "@type": [
+                "https://incubating.orkg.org/class/Table"
+            ],
+            "label": "Test Dataframe 1",
+            "columns": [
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Column"
+                    ],
+                    "titles": [
+                        "Season"
+                    ],
+                    "number": 1,
+                    "@id": "_:n2"
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Column"
+                    ],
+                    "titles": [
+                        "Event Duration [min]"
+                    ],
+                    "number": 2,
+                    "@id": "_:n3"
+                }
+            ],
+            "rows": [
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 1"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "383",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 1
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 2"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "383",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 2
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 3"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "364",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 3
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 4"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "340",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 4
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 5"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "384",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 5
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 6"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Winter",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "392",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 6
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 7"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "320",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 7
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 8"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "309",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 8
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 9"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "346",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 9
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 10"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "281",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 10
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 11"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "340",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 11
+                },
+                {
+                    "@type": [
+                        "https://incubating.orkg.org/class/Row"
+                    ],
+                    "titles": [
+                        "Row 12"
+                    ],
+                    "cells": [
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "Summer",
+                            "column": "_:n2"
+                        },
+                        {
+                            "@type": [
+                                "https://incubating.orkg.org/class/Cell"
+                            ],
+                            "value": "327",
+                            "column": "_:n3"
+                        }
+                    ],
+                    "number": 12
+                }
+            ],
+            "@id": "_:n4"
+        }
+    ],
+    "@context": {
+        "label": "http://www.w3.org/2000/01/rdf-schema#label",
+        "P68000": "https://incubating.orkg.org/property/P68000",
+        "columns": "https://incubating.orkg.org/property/CSVW_Columns",
+        "name": "https://incubating.orkg.org/property/CSVW_Name",
+        "number": "https://incubating.orkg.org/property/CSVW_Number",
+        "rows": "https://incubating.orkg.org/property/CSVW_Rows",
+        "cells": "https://incubating.orkg.org/property/CSVW_Cells",
+        "value": "https://incubating.orkg.org/property/CSVW_Value",
+        "titles": "https://incubating.orkg.org/property/CSVW_Titles",
+        "column": "https://incubating.orkg.org/property/CSVW_Column"
+    }
+}
