@@ -14,8 +14,8 @@
 #2 - Output of summary function on lme (fixed effects)
 #3 - Predicted model values to recreate figure 4a (based on model predictions, not the raw data)
 
-#read in following CSV file:'Landscape.affects.pest.and.crop.yield_2023.cvs'
-Landscape.affects.pest.and.crop.yield_2023<-read.csv("Landscape affects pest and crop yield_2023.csv", na.strings=c("NA", ""))
+# https://datadryad.org/stash/dataset/doi:10.5061/dryad.484tt
+Landscape.affects.pest.and.crop.yield_2023<-read.csv("https://datadryad.org/stash/downloads/file_stream/28280", na.strings=c("NA", "", "N/A"))
 
 #shorten dataset name
 LandscapeData <- Landscape.affects.pest.and.crop.yield_2023
@@ -114,7 +114,6 @@ ParasitoidHostRatio.papertheme
 #add equation to the plot---
 
 ParasitoidHostRatio.papertheme+ stat_regline_equation()
-ggsave("Fig.4d.2.png", plot = ParasitoidHostRatio.papertheme, scale=0.5)
 
 #not sure how to extract equation from the ggplot figure. Alternatively, we could run the individual models
 ParasitoidHostRatio.model <-lm (ParasitoidHostRatio~mead_500, data=LandscapeData,na.action=na.omit )
