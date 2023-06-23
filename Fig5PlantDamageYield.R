@@ -158,9 +158,10 @@ tp$linear_mixed_model(text= 'doc')
 ##################################
 Meter <- tp$qudt_unit(label="m", qudtucumcode="m", same_as="http://qudt.org/vocab/unit/M")
 Radius <- tp$quantity_value(label="500 m radius", qudtnumericvalue= 250, qudtunit=Meter)
-Cabbage <- tp$entity(label="Cabbage", same_as="http://snomed.info/id/735108004")
-Biomass <- tp$entity(label="Mean mass", same_as="http://www.cropontology.org/rdf/CO_337:0000046")
-Host <- tp$entity(label="Parasitoid", same_as="http://purl.obolibrary.org/obo/ECOCORE_00000087")
+CabbageHead <- tp$entity(label="Cabbage Head", same_as="http://purl.obolibrary.org/obo/FOODON_00003406")
+CabbageLeaf <- tp$entity(label="Cabbage Leaf", same_as="http://purl.obolibrary.org/obo/FOODON_00003514")
+Damage <- tp$property(label="Damage (percentage of leaf area removed by herbivores)")
+MeanMass <- tp$property(label="Mean Mass (g)")
 Plot <- tp$entity(label="Agricultural experimental plot", same_as="http://purl.obolibrary.org/obo/AGRO_00000301")
 Mean <- tp$property(label="Incidence", same_as="http://purl.obolibrary.org/obo/NCIT_C16726")
 Meadow <- tp$entity(label="Meadow", same_as="http://purl.obolibrary.org/obo/ENVO_00000108")
@@ -175,13 +176,15 @@ Farm <- tp$entity(label="Farm", same_as="http://purl.obolibrary.org/obo/NCIT_C48
 ################################
 var_fresh_head_biomass <- tp$variable(
   label="Mean mass (g) of marketable cabbage heads",
-  has_object_of_interest_= Cabbage,
+  has_object_of_interest_= CabbageHead,
   has_matrix = Plot,
+  has_property = MeanMass
 )
 
 var_plant_damage <- tp$variable(
   label="Plant damage (percentage of leaf area removed by herbivores)",
-  has_object_of_interest_= Cabbage,
+  has_object_of_interest_= CabbageLeaf,
+  has_property = Damage
 )
 var_Plot_Farm <- tp$variable(
   label="Plot and farm",
@@ -201,19 +204,19 @@ var_Year <- tp$variable(
 ############# LR  #############
 ################################
 lr <- tp$linear_regression(
-  label="A linear regression (LR) with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the dependent variable and the percentage of leaf area removed by herbivores (Plant_damage) as the independent variable.",
-  has_input_dataset=tuple(inputDF, "Raw field data on cabbage head mean mass and plant damage."),
+  label="A linear regression (LR) with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the dependent variable and the percentage of leaf area removed by herbivores (Plant_damage) as the independent variable",
+  has_input_dataset=tuple(inputDF, "Raw field data on cabbage head mean mass and plant damage"),
   has_dependent_variable = var_fresh_head_biomass,
   has_independent_variable = var_plant_damage,
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.5.2.png",
-  has_output_statement= "Relationship between plant damage index (percentage of leaf area removed by herbivores) and cabbage yield (mean mass of marketable cabbage heads). Lines are the fixed-effect predictions from the best model without covariables and associated 95% confidence intervals (gray shaded).",
-  has_output_dataset = tuple(sumLR, "Results of LR with FreshHead_biomass as the dependent variable and Plant_damage as the independent variable.")
+  has_output_statement= "Relationship between plant damage index (percentage of leaf area removed by herbivores) and cabbage yield (mean mass of marketable cabbage heads). Lines are the fixed-effect predictions from the best model without covariables and associated 95% confidence intervals (gray shaded)",
+  has_output_dataset = tuple(sumLR, "Results of LR with FreshHead_biomass as the dependent variable and Plant_damage as the independent variable")
 )
 ################################
 ############# LMM  #############
 ################################
 lmm <- tp$linear_mixed_model(
-  label="A linear mixed model (LMM) with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the response variable, study year (Year) and the percentage of leaf area removed by herbivores (Plant_damage) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
+  label="A linear mixed model (LMM) with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the response variable, study year (Year) and the percentage of leaf area removed by herbivores (Plant_damage) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
   has_response_variable = var_fresh_head_biomass,
   has_fixed_effect_term_i = var_plant_damage,
   has_fixed_effect_term_ii = var_Year,
@@ -224,10 +227,10 @@ lmm <- tp$linear_mixed_model(
 ######### LMM Fitting  #########
 ################################
 lmmFitting <- tp$linear_mixed_model_fitting(
-  label="A linear mixed model (LMM) fitting with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the response variable, study year (Year) and the percentage of leaf area removed by herbivores (Plant_damage) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects.",
+  label="A linear mixed model (LMM) fitting with mean mass (g) of marketable cabbage heads (FreshHead_biomass) as the response variable, study year (Year) and the percentage of leaf area removed by herbivores (Plant_damage) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
   has_input_dataset= tuple(inputDF, "Raw field data on cabbage heads"),
   has_input_model=lmm,
-  has_output_dataset= tuple(LMMOutput, 'Results of LMM fitting with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects.'),
+  has_output_dataset= tuple(LMMOutput, 'Results of LMM fitting with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects'),
 )
 
 ################################
@@ -235,7 +238,7 @@ lmmFitting <- tp$linear_mixed_model_fitting(
 ################################
 LMMSignificanceTesting <- tp$lmm_significance_testing(
   label="Significance testing to attain p-values for Intercept, Plant_damage (the percentage of leaf area removed by herbivores) and Year (sampling year)",
-  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects."),
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects"),
   has_output_dataset= tuple(sum1, 'Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effects'),
 )
 
@@ -244,8 +247,8 @@ LMMSignificanceTesting <- tp$lmm_significance_testing(
 ################################
 ANOVA <- tp$anova(
   label="ANOVA to attain F-values for Intercept, Plant_damage (the percentage of leaf area removed by herbivores) and Year (sampling year)",
-  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Plant_damage and Year as fixed effects."),
-  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.'),
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Plant_damage and Year as fixed effects"),
+  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects'),
 )
 
 
@@ -253,9 +256,9 @@ ANOVA <- tp$anova(
 ######## LMM Prediction  #######
 ################################
 LMMPrediction <- tp$lmm_prediction(
-  label="Prediction using the fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects.",
-  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects."),
-  has_output_dataset= tuple(PredictedValuesCropYield, 'Predicted results of the LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects.'),
+  label="Prediction using the fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects"),
+  has_output_dataset= tuple(PredictedValuesCropYield, 'Predicted results of the LMM with FreshHead_biomass as the response variable, and Year and Plant_damage as fixed effects'),
   has_output_figure = "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.5.png",
 )
 
@@ -264,7 +267,7 @@ LMMPrediction <- tp$lmm_prediction(
 ################################
 instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig5.snippet.R",
-  label="Mean mas of marketable cabbage heads in experimental farm plots evaluated by a LMM with study year and the percentage of leaf area removed by herbivores as fixed effects.", 
+  label="Mean mass of marketable cabbage heads in experimental farm plots evaluated by a LMM with study year and the percentage of leaf area removed by herbivores as fixed effects", 
   has_lmm_fitting= lmmFitting,
   has_anova = ANOVA,
   has_lmm_significance_testing = LMMSignificanceTesting,

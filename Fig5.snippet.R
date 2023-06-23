@@ -14,8 +14,8 @@
 #2 - Output of summary function on lme (fixed effects)
 #3 - Predicted model values to recreate figure 5 (based on model predictions, not the raw data)
 
-#read in following CSV file:'Landscape.affects.pest.and.crop.yield_2023.cvs'
-Landscape.affects.pest.and.crop.yield_2023<-read.csv("Landscape affects pest and crop yield_2023.csv", na.strings=c("NA", ""))
+# https://datadryad.org/stash/dataset/doi:10.5061/dryad.484tt
+Landscape.affects.pest.and.crop.yield_2023<-read.csv("https://datadryad.org/stash/downloads/file_stream/28280", na.strings=c("NA", "", "N/A"))
 
 #shorten dataset name
 LandscapeData <- Landscape.affects.pest.and.crop.yield_2023
@@ -98,7 +98,7 @@ p1 <- ggplot(PlantDamageIndex , aes(x = Plant_damage, y = sqrt(FreshHead_biomass
   geom_line(data = newdat.lme.Cr, aes(y = predlme.Cr), size = .75)+
   theme_classic()+xlab('Plant Damage Index (%) ')+ylab('Cabbage head mass (g)')
 p1
-ggsave("Fig.5.png", plot = p1, scale=0.5)
+#ggsave("Fig.5.png", plot = p1, scale=0.5)
 
 #### Fig. 5 ####
 
@@ -107,7 +107,7 @@ PlantDamageIndex.papertheme<- ggplot(LandscapeData, aes(x=Plant_damage, y=FreshH
   theme(legend.position = "top")+xlab('Plant Damage Index (%)')+ ylab('Cabbage head mass (g)')+coord_cartesian(ylim = c(0,2500))
 PlantDamageIndex.papertheme
 
-ggsave("Fig.5.2.png", plot = PlantDamageIndex.papertheme, scale=0.5)
+#ggsave("Fig.5.2.png", plot = PlantDamageIndex.papertheme, scale=0.5)
 
 #not sure how to extract equation from the ggplot figure. Alternatively, we could run the individual models
 #First, we need to split the dataset per year

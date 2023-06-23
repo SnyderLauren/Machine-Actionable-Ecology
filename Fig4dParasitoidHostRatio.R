@@ -155,7 +155,7 @@ tp$linear_mixed_model(text= 'doc')
 Meter <- tp$qudt_unit(label="m", qudtucumcode="m", same_as="http://qudt.org/vocab/unit/M")
 Radius <- tp$quantity_value(label="500 m radius", qudtnumericvalue= 250, qudtunit=Meter)
 Parasitoid <- tp$entity(label="Parasitoid", same_as="http://purl.obolibrary.org/obo/ECOCORE_00000087")
-ParasitoidHost <- tp$entity(label="Parasitoid and host", same_as="")
+ParasitoidHost <- tp$entity(label="Parasitoid and their host")
 Host <- tp$entity(label="Parasitoid", same_as="http://purl.obolibrary.org/obo/ECOCORE_00000087")
 Plot <- tp$entity(label="Agricultural experimental plot", same_as="http://purl.obolibrary.org/obo/AGRO_00000301")
 Ratio <- tp$property(label="Incidence", same_as="http://purl.obolibrary.org/obo/NCIT_C16726")
@@ -196,14 +196,14 @@ var_Plot_Farm <- tp$variable(
 ################################
 lr <- tp$linear_regression(
   label="A linear regression (LR) with parasitoid-host ratio (ParasitoidHostRatio) as the dependent variable and the proportion of meadows within a 500 meter radius of the experimental 
-  farm plot (mead_500) as the independent variable.",
-  has_input_dataset=tuple(inputDF, "Raw field data on lepidoptera incidence."),
+  farm plot (mead_500) as the independent variable",
+  has_input_dataset=tuple(inputDF, "Raw field data with parasitoid-host ratio"),
   has_dependent_variable = var_parasitoid_host_ratio,
   has_independent_variable = var_mead_500,
   has_output_figure="https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4d.2.png",
   has_output_statement= "Relationship between the proportion of meadows around the experimental fields (500 m radius) and parasitoid-host ratio. Lines are the fixed-effect predictions 
-  from the best models without covariables and shading represents the associated 95% confidence intervals.",
-  has_output_dataset = tuple(sumLR, "Results of LR with ParasitoidHostRatio as the dependent variable and mead_500 as the independent variable.")
+  from the best models without covariables and shading represents the associated 95% confidence intervals",
+  has_output_dataset = tuple(sumLR, "Results of LR with ParasitoidHostRatio as the dependent variable and mead_500 as the independent variable")
 )
 
 
@@ -227,15 +227,15 @@ lmmFitting <- tp$linear_mixed_model_fitting(
   farm plot (mead_500) as fixed effects, and farm (Farm_ID) and plot identity (Plot_ID) as random effects",
   has_input_dataset= tuple(inputDF, "Raw field data on parasitoid-host ratio"),
   has_input_model=lmm,
-  has_output_dataset= tuple(LMMOutput, 'Results of LMM fitting with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.'),
+  has_output_dataset= tuple(LMMOutput, 'Results of LMM fitting with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect'),
 )
 
 ################################
 ## LMM Significance Testing  ###
 ################################
 LMMSignificanceTesting <- tp$lmm_significance_testing(
-  label="Significance testing to attain p-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot).",
-  has_input_dataset= tuple(LMMOutput, "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect."),
+  label="Significance testing to attain p-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect"),
   has_output_dataset= tuple(sum1, 'Value (slope estimates), Std.Error, DF, t- value and p-value for fixed effect'),
 )
 
@@ -244,9 +244,9 @@ LMMSignificanceTesting <- tp$lmm_significance_testing(
 ############ Anova  ############
 ################################
 ANOVA <- tp$anova(
-  label="ANOVA to attain F-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot).",
-  has_input_dataset= tuple(LMMOutput, "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect."),
-  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.'),
+  label="ANOVA to attain F-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot)",
+  has_input_dataset= tuple(LMMOutput, "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect"),
+  has_output_dataset= tuple(anovaOutput, 'numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects'),
 )
 
 
@@ -256,7 +256,7 @@ ANOVA <- tp$anova(
 LMMPrediction <- tp$lmm_prediction(
   label="Prediction using the fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.",
   has_input_dataset= tuple(LMMOutput, "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect."),
-  has_output_dataset= tuple(PredictedValuesParasitoidHostRatio, 'Predicted results of the LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.'),
+  has_output_dataset= tuple(PredictedValuesParasitoidHostRatio, 'Predicted results of the LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect'),
   has_output_figure = "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig.4d.png",
 )
 
@@ -266,7 +266,7 @@ LMMPrediction <- tp$lmm_prediction(
 ################################
 instance <- tp$lmm_planned_process(
   has_implementation= "https://raw.githubusercontent.com/SnyderLauren/Machine-Actionable-Ecology/main/Fig4d.snippet.R",
-  label="ParasitoidHostRatio in experimental farm plots evaluated by a LMM with the proportion of meadows within a 500 meter radius as a fixed effect.", 
+  label="Parasitoid-host ratio in experimental farm plots evaluated by a LMM with the proportion of meadows within a 500 meter radius as a fixed effect", 
   has_lmm_fitting= lmmFitting,
   has_anova = ANOVA,
   has_lmm_significance_testing = LMMSignificanceTesting,

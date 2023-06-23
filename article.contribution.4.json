@@ -1,19 +1,19 @@
 {
   "@id": "_:n1",
-  "label": "ParasitoidHostRatio in experimental farm plots evaluated by a LMM with the proportion of meadows within a 500 meter radius as a fixed effect.",
+  "label": "Parasitoid-host ratio in experimental farm plots evaluated by a LMM with the proportion of meadows within a 500 meter radius as a fixed effect",
   "@type": [
     "https://incubating.orkg.org/class/C38012"
   ],
   "P81094": [
     {
       "@id": "_:n2",
-      "label": "A linear regression (LR) with parasitoid-host ratio (ParasitoidHostRatio) as the dependent variable and the proportion of meadows within a 500 meter radius of the experimental \n  farm plot (mead_500) as the independent variable.",
+      "label": "A linear regression (LR) with parasitoid-host ratio (ParasitoidHostRatio) as the dependent variable and the proportion of meadows within a 500 meter radius of the experimental \n  farm plot (mead_500) as the independent variable",
       "@type": [
         "https://incubating.orkg.org/class/C42000"
       ],
       "P68002": [
         {
-          "label": "Results of LR with ParasitoidHostRatio as the dependent variable and mead_500 as the independent variable.",
+          "label": "Results of LR with ParasitoidHostRatio as the dependent variable and mead_500 as the independent variable",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -132,7 +132,7 @@
       ],
       "P68000": [
         {
-          "label": "Raw field data on lepidoptera incidence.",
+          "label": "Raw field data with parasitoid-host ratio",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -1040,19 +1040,19 @@
           "P75004": [
             {
               "@id": "_:n23",
-              "label": "Parasitoid and host",
+              "label": "Parasitoid and their host",
               "@type": [
                 "https://incubating.orkg.org/class/C37003"
               ],
               "SAME_AS": [
-                ""
+                "character"
               ]
             }
           ]
         }
       ],
       "P69030": [
-        "Relationship between the proportion of meadows around the experimental fields (500 m radius) and parasitoid-host ratio. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals."
+        "Relationship between the proportion of meadows around the experimental fields (500 m radius) and parasitoid-host ratio. Lines are the fixed-effect predictions \n  from the best models without covariables and shading represents the associated 95% confidence intervals"
       ]
     }
   ],
@@ -1065,7 +1065,7 @@
       ],
       "P68002": [
         {
-          "label": "Predicted results of the LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.",
+          "label": "Predicted results of the LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -1798,13 +1798,13 @@
   "P78001": [
     {
       "@id": "_:n32",
-      "label": "ANOVA to attain F-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot).",
+      "label": "ANOVA to attain F-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot)",
       "@type": [
         "https://incubating.orkg.org/class/C39001"
       ],
       "P68002": [
         {
-          "label": "numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects.",
+          "label": "numDF (degrees of freedom of the numerator), denDF (degrees of freedom of the denominator), F-value, and the associated p-value for fixed effects",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -1923,7 +1923,7 @@
       ],
       "P68000": [
         {
-          "label": "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.",
+          "label": "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -1979,13 +1979,13 @@
   "P78000": [
     {
       "@id": "_:n40",
-      "label": "Significance testing to attain p-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot).",
+      "label": "Significance testing to attain p-values for Intercept and mead_500 (proportion of meadows within a 500 meter radius of the field plot)",
       "@type": [
         "https://incubating.orkg.org/class/C39000"
       ],
       "P68000": [
         {
-          "label": "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.",
+          "label": "Fitted LMM with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -2188,7 +2188,7 @@
       ],
       "P68002": [
         {
-          "label": "Results of LMM fitting with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect.",
+          "label": "Results of LMM fitting with ParasitoidHostRatio as the response variable and mead_500 as a fixed effect",
           "@type": [
             "https://incubating.orkg.org/class/Table"
           ],
@@ -2313,12 +2313,12 @@
               "P75004": [
                 {
                   "@id": "_:n59",
-                  "label": "Parasitoid and host",
+                  "label": "Parasitoid and their host",
                   "@type": [
                     "https://incubating.orkg.org/class/C37003"
                   ],
                   "SAME_AS": [
-                    ""
+                    "character"
                   ]
                 }
               ]
